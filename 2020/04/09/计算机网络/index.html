@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="整理收集了关于计算机网络的基础知识，方便复习； 网络分层模型 物理层：在数据链路实体之间，合理的通过中间系统，为位传输所需要的物理连接的激活，保持和取消提供机械的，规程的，电气的，功能的手段。负责产生 0、1 比特流； 数据链路层：基本功能是将不可靠的物理链路变为可靠的数据链路，为网络层提供可靠的数据传输。组装数据帧，透明传输，差错检测。负责将比特流封装成帧，帧中包含源 MAC 地址和 目标 MA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络">
+<meta property="og:url" content="http://yoursite.com/2020/04/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:site_name" content="三鱼在熬汤">
+<meta property="og:description" content="整理收集了关于计算机网络的基础知识，方便复习； 网络分层模型 物理层：在数据链路实体之间，合理的通过中间系统，为位传输所需要的物理连接的激活，保持和取消提供机械的，规程的，电气的，功能的手段。负责产生 0、1 比特流； 数据链路层：基本功能是将不可靠的物理链路变为可靠的数据链路，为网络层提供可靠的数据传输。组装数据帧，透明传输，差错检测。负责将比特流封装成帧，帧中包含源 MAC 地址和 目标 MA">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200409183846650.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200409190713922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020040919082634.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-04-09T11:37:05.241Z">
+<meta property="article:modified_time" content="2020-04-09T11:43:34.502Z">
+<meta property="article:author" content="三鱼">
+<meta property="article:tag" content="三鱼的博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200409183846650.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70">
+
+<link rel="canonical" href="http://yoursite.com/2020/04/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>计算机网络 | 三鱼在熬汤</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+	<!-- 音频播放 -->
+	<link rel="stylesheet" href="/dist/APlayer.min.css">
+	<div id="aplayer"></div>
+	<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+	<script type="text/javascript" src="/dist/music.js"></script>
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">三鱼在熬汤</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">欢迎来到我的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aotang.jpg">
+      <meta itemprop="name" content="三鱼">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三鱼在熬汤">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机网络
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-09 19:37:05 / 修改时间：19:43:34" itemprop="dateCreated datePublished" datetime="2020-04-09T19:37:05+08:00">2020-04-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">计算机基础</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>整理收集了关于计算机网络的基础知识，<br>方便复习；</p>
+<h2 id="网络分层模型"><a href="#网络分层模型" class="headerlink" title="网络分层模型"></a>网络分层模型</h2><ol>
+<li>物理层：在数据链路实体之间，合理的通过中间系统，为位传输所需要的物理连接的激活，保持和取消提供机械的，规程的，电气的，功能的手段。<br><strong>负责产生 0、1 比特流；</strong></li>
+<li>数据链路层：基本功能是将不可靠的物理链路变为可靠的数据链路，为网络层提供可靠的数据传输。组装数据帧，透明传输，差错检测。<br><strong>负责将比特流封装成帧，帧中包含源 MAC 地址和 目标 MAC 地址</strong> </li>
+<li>网络层：主要功能有存储转发，路由选择，拥塞控制和网络互联等。<br><strong>IP 协议是 TCP/IP 协议的核心，所有的 TCP、UDP、ICMP 都以 IP 数据格式传输。</strong></li>
+<li>传输层：实现差错控制和拥塞控制等，实现端到端的，可靠或不可靠的数据传输服务。</li>
+<li>会话层：管理主机之间的会话进程，负责建立，管理，终止进程之间的会话。会话层还利用在数据中插入校验点来实现数据的同步。</li>
+<li>表示层：对上层传输的信息进行变换，保证一个主机的应用层信息可以被另一个主机的应用程序所理解。表示层的数据转换包括加密，压缩，格式转换等。</li>
+<li>应用层：用户的应用程序提供网络服务的接口。将用户的操作通过应用程序转换成为服务，并匹配一个相应的服务协议发送给传输层。<a id="more"></a>
+<h2 id="五层协议"><a href="#五层协议" class="headerlink" title="五层协议"></a>五层协议</h2><img src="https://img-blog.csdnimg.cn/20200409183846650.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70" alt="协议"><br>[图片来源见水印]<ol>
+<li>物理层 </li>
+<li>链路层（逻辑链路控制 LLC，媒体接入控制 MAC）<br>定义了如何让格式化数据以进行传输，以及如何控制对物理介质的访问，这一层通常还提供错误检测和纠正，以确保数据的可靠传输。</li>
+<li>网络层（IP 协议，ARP 地址解析协议，RARP 逆地址解析协议，ICMP 因特网控制报文协议） </li>
+<li>传输层（TCP传输控制协议，UDP用户报文协议） </li>
+<li>应用层（HTTP 超文本传输协议，SMTP简单邮件协议，FTP 文件传输协议，DNS 域名系统，TELNET 远程登录协议，简单网络管理协议SNMP） <h2 id="有-MAC-地址，为什么还要-IP-地址"><a href="#有-MAC-地址，为什么还要-IP-地址" class="headerlink" title="有 MAC 地址，为什么还要 IP 地址"></a>有 MAC 地址，为什么还要 IP 地址</h2></li>
+</ol>
+</li>
+<li>使数据的传输基于网络拓扑结构。</li>
+<li>我们的通讯设备，无论是手机、电脑或者其他设备（无线电不太知道），都会有一个独一无二、固定的mac地址。mac地址与我们的设备进行绑定，就能确定我们身份。其实MAC地址，并不能算是地址，更应该算是一个身份证，用来表明身份。</li>
+<li>只拥有MAC地址的话，只有在同一网络区域内，才能进行数据传输，不能跨网络区域。</li>
+<li>如果想跨网络区域进行数据传递，最现实的方法就是借助ISP（Internet Service Provider，互联网服务提供商）提供的网络区域。</li>
+<li>ISP能提供全球互联的网络——因特网，借助因特网可以传输数据给连接因特网上的机器。<h2 id="TCP-UDP-区别"><a href="#TCP-UDP-区别" class="headerlink" title="TCP UDP 区别"></a>TCP UDP 区别</h2></li>
+<li>TCP的主要特点是：<br>（1）面向连接。<br>（2）每一条TCP连接只能是点对点的（一对一）。<br>（3）提供可靠交付的服务(无差错，不丢失，不重复，且按序到达)(校验和、重传控制、序号标识、滑动窗口、确认应答实现可靠传输。如丢包时的重发控制，还可以对次序乱掉的分包进行顺序控制。)。<br>（4）提供全双工通信。<br>（5）面向字节流。</li>
+<li>UDP的主要特点是：<br>（1）无连接。<br>（2）尽最大努力交付(不保证可靠交付)。<br>（3）面向报文。<br>（4）无拥塞控制。<br>（5）支持一对一、一对多、多对一和多对多的交互通信。<br>（6）首部开销小（只有四个字段：源端口、目的端口、长度、检验和）。</li>
+<li>采用TCP，一旦发生丢包，TCP会将后续的包缓存起来，等前面的包重传并接收到后再继续发送，延时会越来越大。<br>UDP对实时性要求较为严格的情况下，采用自定义重传机制，能够把丢包产生的延迟降到最低，尽量减少网络问题对游戏性造成影响。<h2 id="拥塞控制和流量控制"><a href="#拥塞控制和流量控制" class="headerlink" title="拥塞控制和流量控制"></a>拥塞控制和流量控制</h2><h4 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h4>1、拥塞控制是A与B之间的网络发生堵塞导致传输过慢或者丢包，来不及传输。防止过多的数据注入到网络中，这样可以使网络中的路由器或链路不至于过载。拥塞控制是一个全局性的过程，涉及到所有的主机、路由器，以及与降低网络性能有关的所有因素。<br>2、拥塞控制四个过程（算法）：慢启动，拥塞避免，快重传，快恢复（控制路由链路传输的速度，避免网络过载）<br>（1）慢启动算法：早期开发的TCP应用在启动一个连接时会向网络中发送大量的数据包，这样很容易导致路由器缓存空间耗尽，网络发生拥塞，使得TCP连接的吞吐量急剧下降。由于TCP源端无法知道网络资源当前的利用状况，因此新建立的TCP连接不能一开始就发送大量数据，而只能逐步增加每次发送的数据量，以避免上述现象的发生。因此<br>执行的初始 cwnd (最大报文段的 MSS 数值) 是1，当收到确认后，cwnd 扩大二倍：2，4，6，8…<br>（2）拥塞避免：当 cwnd 的数值 &gt;= ssthresh （慢启动阈值）的时候，cwnd 开始线型增长 ，进入拥塞避免，若出现超时， ssthresh = cwnd / 2，执行慢开始<br>（3）快重传和快恢复：  快重传算法首先要求接收方每收到一个失序的报文段后就立即发出重复确认（为的是使发送方及早知道有报文段没有到达对方）而不要等到自己发送数据时才进行捎带确认。</li>
+</ol>
+<h4 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h4><p>1、流量控制是点到点的控制，例如A通过网络给B发数据，A发送的太快导致B没法接收(B缓冲窗口过小或者处理过慢)，这时候的控制就是流量控制，原理是通过滑动窗口的大小改变来实现。<br>2、实现流量控制有两种协议，一种是停等协议，一种是滑动窗口协议。<br>（1）停等协议可以看做是发送窗口和接收窗口都为1，发送方在发送一个数据帧以后必须得到接收方的确认才能发送下一个数据帧。这种方式效率低，不能充分的利用带宽。<br>（2）滑动窗口协议为了提高网络带宽利用率，采用多帧一应答的同步方法。接收方的接收缓存容量可以存放n个帧，发送方可以连续发送n个帧以后再停下来等待接收站的应答<br>帧，当接收到应答帧以后再发送下n个帧。<br><strong>滑动窗口</strong>：一段连续的字节序列<br>滑动窗口实现了TCP流控控制。</p>
+<ol>
+<li><p>窗口是一段可以被发送者发送的字节序列，是连续的一段消息，它会随着发送的过程不断的进行移动。</p>
+</li>
+<li><p>TCP 会话的双方都各自维护一个发送窗口和一个接收窗口</p>
+</li>
+<li><p>TCP 的传输效率不能大于应用的数据的处理速度</p>
+</li>
+<li><p>发送方的数据分为：未发送，但不允许发送；未发送，但允许发送；已发送，未收到ACK，已发送，已收到 ACK；</p>
+</li>
+<li><p>接收方的数据分为：已接受、未接受但准备接受、未接受且不准备接受</p>
+</li>
+<li><p>发送方只有收到接收方给的发送滑动窗口内的 ACK 确认包才会移动发送窗口的左边界</p>
+</li>
+<li><p>接受窗口只有在前面的字段都收到之后才移动左边界，前面还有字节受到的情况下，窗口不会移动，也不会对后续字节确认</p>
+</li>
+<li><p>遵循快速重传、累计确认、选择确认的规则</p>
+</li>
+</ol>
+<p><strong>后退 N 针协议：</strong><br>累积确认的意思是：接收方不必对收到的分组逐个发送确认，而是可以在收到几个分组后，对按序到达的最后一个分组加以确认。</p>
+<h2 id="三次握手、四次挥手"><a href="#三次握手、四次挥手" class="headerlink" title="三次握手、四次挥手"></a>三次握手、四次挥手</h2><p><img src="https://img-blog.csdnimg.cn/20200409190713922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70" alt="三次握手"><br>[图片来源见水印]<br><img src="https://img-blog.csdnimg.cn/2020040919082634.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70" alt="四次挥手"><br>[图片来源见水印]</p>
+<h4 id="为什么连接的时候是三次握手，关闭的时候却是四次握手？"><a href="#为什么连接的时候是三次握手，关闭的时候却是四次握手？" class="headerlink" title="为什么连接的时候是三次握手，关闭的时候却是四次握手？"></a>为什么连接的时候是三次握手，关闭的时候却是四次握手？</h4><p>因为当Server端收到Client端的SYN连接请求报文后，可以直接发送SYN+ACK报文。其中ACK报文是用来应答的，SYN报文是用来同步的。但是关闭连接时，当Server端收到FIN报文时，很可能并不会立即关闭SOCKET，所以只能先回复一个ACK报文，告诉Client端，”你发的FIN报文我收到了”。只有等到我Server端所有的报文都发送完了，我才能发送FIN报文，因此不能一起发送。故需要四步握手。</p>
+<h4 id="为什么TIME-WAIT状态需要经过2MSL-最大报文段生存时间-才能返回到CLOSE状态？"><a href="#为什么TIME-WAIT状态需要经过2MSL-最大报文段生存时间-才能返回到CLOSE状态？" class="headerlink" title="为什么TIME_WAIT状态需要经过2MSL(最大报文段生存时间)才能返回到CLOSE状态？"></a>为什么TIME_WAIT状态需要经过2MSL(最大报文段生存时间)才能返回到CLOSE状态？</h4><p>答：如果网络是不可靠的，有可以最后一个ACK丢失。所以TIME_WAIT状态就是用来重发可能丢失的ACK报文。在Client发送出最后的ACK回复，但该ACK可能丢失。Server如果没有收到ACK，将不断重复发送FIN片段。所以Client不能立即关闭，它必须确认Server接收到了该ACK。Client会在发送出ACK之后进入到TIME_WAIT状态。Client会设置一个计时器，等待2MSL的时间。如果在该时间内再次收到FIN，那么Client会重发ACK并再次等待2MSL。所谓的2MSL是两倍的MSL(Maximum Segment Lifetime)。MSL指一个片段在网络中最大的存活时间，2MSL就是一个发送和一个回复所需的最大时间。如果直到2MSL，Client都没有再次收到FIN，那么Client推断ACK已经被成功接收，则结束TCP连接。</p>
+<h4 id="为什么不能用两次握手进行连接？"><a href="#为什么不能用两次握手进行连接？" class="headerlink" title="为什么不能用两次握手进行连接？"></a>为什么不能用两次握手进行连接？</h4><p>1、3次握手完成两个重要的功能，既要双方做好发送数据的准备工作(双方都知道彼此已准备好)，也要允许双方就初始序列号进行协商，这个序列号在握手过程中被发送和确认。</p>
+<p>2、现在把三次握手改成仅需要两次握手，死锁是可能发生的。作为例子，考虑计算机S和C之间的通信，假定C给S发送一个连接请求分组，S收到了这个分组，并发 送了确认应答分组。按照两次握手的协定，S认为连接已经成功地建立了，可以开始发送数据分组。可是，C在S的应答分组在传输中被丢失的情况下，将不知道S 是否已准备好，不知道S建立什么样的序列号，C甚至怀疑S是否收到自己的连接请求分组。在这种情况下，C认为连接还未建立成功，将忽略S发来的任何数据分 组，只等待连接确认应答分组。而S在发出的分组超时后，重复发送同样的分组。这样就形成了死锁。</p>
+<h2 id="http和https的区别"><a href="#http和https的区别" class="headerlink" title="http和https的区别"></a>http和https的区别</h2><p>1、https协议需要到CA（Certificate Authority，证书颁发机构）申请证书，一般免费证书较少，因而需要一定费用。<br>2、http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。<br>3、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。<br>4、http的连接很简单，是无状态的。Https协议是由SSL+Http协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。(无状态的意思是其数据包的发送、传输和接收都是相互独立的。无连接的意思是指通信双方都不长久的维持对方的任何信息。)</p>
+<h2 id="http、socket-的区别"><a href="#http、socket-的区别" class="headerlink" title="http、socket 的区别"></a>http、socket 的区别</h2><p>1、    http 是应用层协议，基于 tcp 协议，使用「请求-响应」方式建立，在请求时需要建立连接且客户端要先发出请求，可见服务器需要等到客户端发送一次请求后才能将数据传回客户端。<br>2、    socket 是对 tcp/ip 协议对封装，是接口，不是协议；创建 Socket 连接时可以指定传输层协议是 TCP 或 UDP，Socket 建立链接的三步骤：服务器监听 -&gt; 客户端请求 -&gt; 连接确认，服务器可以直接将数据传给客户端 </p>
+<h2 id="浏览器地址输入-URL-会发生什么？"><a href="#浏览器地址输入-URL-会发生什么？" class="headerlink" title="浏览器地址输入 URL 会发生什么？"></a>浏览器地址输入 URL 会发生什么？</h2><p>1、浏览器向 DNS 服务器请求解析 URL 中的域名所对应的 IP 地址。 </p>
+<p>2、解析出 IP 之后，根据 IP 地址和默认端口 80，和服务器建立 TCP 连接 </p>
+<p>3、浏览器发出读取文件的 HTTP 请求，该请求的第三次握手传输请求报文。 </p>
+<p>4、服务器对浏览器作出响应，并把 HTML 文本返回给浏览器 </p>
+<p>5、释放 TCP 连接，如果 connection 模式为 close，服务器主动关闭 TCP 连接，客户端被动关闭，释放 TCP 连接；若 connection 为 keep alive，则保持连接一段时间。在该时间内，可以继续接受请求。 </p>
+<p>6、客户端将服务器响应的 html解析渲染。 </p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>投递小鱼干</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="三鱼 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="三鱼 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/08/%E6%88%91%E7%9A%84%E5%A4%B4%E5%83%8F/" rel="prev" title="我的头像">
+      <i class="fa fa-chevron-left"></i> 我的头像
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/09/%E7%A7%98%E5%AF%86%E6%8A%A5%E8%AD%A6/" rel="next" title="秘密报警">
+      秘密报警 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+	
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+		
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络分层模型"><span class="nav-number">1.</span> <span class="nav-text">网络分层模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五层协议"><span class="nav-number">2.</span> <span class="nav-text">五层协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有-MAC-地址，为什么还要-IP-地址"><span class="nav-number">3.</span> <span class="nav-text">有 MAC 地址，为什么还要 IP 地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-UDP-区别"><span class="nav-number">4.</span> <span class="nav-text">TCP UDP 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拥塞控制和流量控制"><span class="nav-number">5.</span> <span class="nav-text">拥塞控制和流量控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#拥塞控制"><span class="nav-number">5.0.1.</span> <span class="nav-text">拥塞控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#流量控制"><span class="nav-number">5.0.2.</span> <span class="nav-text">流量控制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手、四次挥手"><span class="nav-number">6.</span> <span class="nav-text">三次握手、四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么连接的时候是三次握手，关闭的时候却是四次握手？"><span class="nav-number">6.0.1.</span> <span class="nav-text">为什么连接的时候是三次握手，关闭的时候却是四次握手？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么TIME-WAIT状态需要经过2MSL-最大报文段生存时间-才能返回到CLOSE状态？"><span class="nav-number">6.0.2.</span> <span class="nav-text">为什么TIME_WAIT状态需要经过2MSL(最大报文段生存时间)才能返回到CLOSE状态？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么不能用两次握手进行连接？"><span class="nav-number">6.0.3.</span> <span class="nav-text">为什么不能用两次握手进行连接？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http和https的区别"><span class="nav-number">7.</span> <span class="nav-text">http和https的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http、socket-的区别"><span class="nav-number">8.</span> <span class="nav-text">http、socket 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器地址输入-URL-会发生什么？"><span class="nav-number">9.</span> <span class="nav-text">浏览器地址输入 URL 会发生什么？</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="三鱼"
+      src="/images/aotang.jpg">
+  <p class="site-author-name" itemprop="name">三鱼</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Three-FISH" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Three-FISH" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+    
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">三鱼</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">11k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">10 分钟</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
