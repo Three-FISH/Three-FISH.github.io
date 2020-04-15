@@ -20,21 +20,23 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="我的头像">
-<meta property="og:url" content="http://yoursite.com/2020/04/08/%E6%88%91%E7%9A%84%E5%A4%B4%E5%83%8F/index.html">
+  <meta name="description" content="1. 什么是爬虫？网络爬虫也叫网络蜘蛛，如果把互联网比喻成一个蜘蛛网，那么蜘蛛就是在网上爬来爬去的蜘蛛，爬虫程序通过请求url地址，根据响应的内容进行解析采集数据，比如：如果响应内容是html，分析dom结构，进行dom解析、或者正则匹配，如果响应内容是xml&#x2F;json数据，就可以转数据对象，然后对数据进行解析。 2. 有什么作用？通过有效的爬虫手段批量采集数据，可以降低人工成本，提高有效数据量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01. 爬虫介绍">
+<meta property="og:url" content="http://yoursite.com/2020/04/15/01.%20%E7%88%AC%E8%99%AB%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="三鱼在熬汤">
+<meta property="og:description" content="1. 什么是爬虫？网络爬虫也叫网络蜘蛛，如果把互联网比喻成一个蜘蛛网，那么蜘蛛就是在网上爬来爬去的蜘蛛，爬虫程序通过请求url地址，根据响应的内容进行解析采集数据，比如：如果响应内容是html，分析dom结构，进行dom解析、或者正则匹配，如果响应内容是xml&#x2F;json数据，就可以转数据对象，然后对数据进行解析。 2. 有什么作用？通过有效的爬虫手段批量采集数据，可以降低人工成本，提高有效数据量">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200408215314598.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200408215936168.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="article:published_time" content="2020-04-08T14:02:12.204Z">
-<meta property="article:modified_time" content="2020-04-08T14:35:44.921Z">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517157496430&di=9d8bbd8ae0eb17809b394f8936987b1c&imgtype=0&src=http%253A%252F%252Fimg.mukewang.com%252F57466ffc00015e2f06000338-590-330.jpg">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/734769369243449783AC0567A0239F3F?method=download&shareKey=2965ef70a4ffeacd7d29b0a3f3b76cd0">
+<meta property="article:published_time" content="2020-04-15T03:30:26.714Z">
+<meta property="article:modified_time" content="2020-04-15T03:30:53.124Z">
 <meta property="article:author" content="三鱼">
 <meta property="article:tag" content="三鱼的博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200408215314598.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70#pic_center">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517157496430&di=9d8bbd8ae0eb17809b394f8936987b1c&imgtype=0&src=http%253A%252F%252Fimg.mukewang.com%252F57466ffc00015e2f06000338-590-330.jpg">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/08/%E6%88%91%E7%9A%84%E5%A4%B4%E5%83%8F/">
+<link rel="canonical" href="http://yoursite.com/2020/04/15/01.%20%E7%88%AC%E8%99%AB%E4%BB%8B%E7%BB%8D/">
 
 
 <script id="page-configurations">
@@ -47,7 +49,7 @@
   };
 </script>
 
-  <title>我的头像 | 三鱼在熬汤</title>
+  <title>01. 爬虫介绍 | 三鱼在熬汤</title>
   
 
 
@@ -174,7 +176,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/%E6%88%91%E7%9A%84%E5%A4%B4%E5%83%8F/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/15/01.%20%E7%88%AC%E8%99%AB%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/aotang.jpg">
@@ -187,7 +189,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          我的头像
+          01. 爬虫介绍
         </h1>
 
         <div class="post-meta">
@@ -198,7 +200,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-04-08 22:02:12 / 修改时间：22:35:44" itemprop="dateCreated datePublished" datetime="2020-04-08T22:02:12+08:00">2020-04-08</time>
+              <time title="创建时间：2020-04-15 11:30:26 / 修改时间：11:30:53" itemprop="dateCreated datePublished" datetime="2020-04-15T11:30:26+08:00">2020-04-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -206,7 +208,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%BE%E8%AE%A1/" itemprop="url" rel="index"><span itemprop="name">个人设计</span></a>
+                  <a href="/categories/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">爬虫学习</span></a>
                 </span>
             </span>
 
@@ -216,7 +218,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>82</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -235,12 +237,110 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img src="https://img-blog.csdnimg.cn/20200408215314598.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70#pic_center" alt="三鱼"></p>
-<a id="more"></a>
-
-<p><img src="https://img-blog.csdnimg.cn/20200408215936168.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70#pic_center" alt="字体设计"><br>字体是大二设计的啦</p>
-<p>【我是三鱼，我在慢慢熬汤，慢慢进步】</p>
-<p>一直以来都使用云笔记，现在决定开辟一片自己的小世界；<br>终于搭建了自己的博客；<br>记录学习，记录日常；<br>希望会一直进步。</p>
+        <p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517157496430&di=9d8bbd8ae0eb17809b394f8936987b1c&imgtype=0&src=http%3A%2F%2Fimg.mukewang.com%2F57466ffc00015e2f06000338-590-330.jpg" alt="图片"></p>
+<h3 id="1-什么是爬虫？"><a href="#1-什么是爬虫？" class="headerlink" title="1. 什么是爬虫？"></a>1. 什么是爬虫？</h3><p><strong>网络爬虫</strong>也叫<strong>网络蜘蛛</strong>，如果把互联网比喻成一个蜘蛛网，那么蜘蛛就是在网上爬来爬去的蜘蛛，爬虫程序通过请求url地址，根据响应的内容进行解析采集数据，<br>比如：如果响应内容是html，分析dom结构，进行dom解析、或者正则匹配，如果响应内容是xml/json数据，就可以转数据对象，然后对数据进行解析。</p>
+<h3 id="2-有什么作用？"><a href="#2-有什么作用？" class="headerlink" title="2. 有什么作用？"></a>2. 有什么作用？</h3><p>通过有效的爬虫手段批量采集数据，可以降低人工成本，提高有效数据量，给予运营/销售的数据支撑，加快产品发展。 </p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://note.youdao.com/yws/api/personal/file/734769369243449783AC0567A0239F3F?method=download&shareKey=2965ef70a4ffeacd7d29b0a3f3b76cd0" alt="image"></h2><h3 id="3-业界的情况"><a href="#3-业界的情况" class="headerlink" title="3. 业界的情况"></a>3. 业界的情况</h3><p>目前互联网产品竞争激烈，业界大部分都会使用爬虫技术对竞品产品的数据进行挖掘、采集、大数据分析，这是必备手段，并且很多公司都设立了<code>爬虫工程师</code>的岗位</p>
+<hr>
+<h3 id="4-合法性"><a href="#4-合法性" class="headerlink" title="4. 合法性"></a>4. 合法性</h3><p>爬虫是利用程序进行批量爬取网页上的公开信息，也就是前端显示的数据信息。因为信息是完全公开的，所以是合法的。其实就像浏览器一样，浏览器解析响应内容并渲染为页面，而爬虫解析响应内容采集想要的数据进行存储。</p>
+<hr>
+<h3 id="5-反爬虫"><a href="#5-反爬虫" class="headerlink" title="5. 反爬虫"></a>5. 反爬虫</h3><p>爬虫很难完全的制止，道高一尺魔高一丈，这是一场没有硝烟的战争，码农VS码农<br>反爬虫一些手段：</p>
+<ul>
+<li>合法检测：请求校验(useragent，referer，接口加签名，等)</li>
+<li>小黑屋：IP/用户限制请求频率，或者直接拦截</li>
+<li>投毒：反爬虫高境界可以不用拦截，拦截是一时的，投毒返回虚假数据，可以误导竞品决策</li>
+<li>… …</li>
+</ul>
+<hr>
+<h3 id="6-选择一门语言"><a href="#6-选择一门语言" class="headerlink" title="6. 选择一门语言"></a>6. 选择一门语言</h3><p>爬虫可以用各种语言写, C++, Java都可以, 为什么要Python?</p>
+<p>首先用C++搞网络开发的例子不多(可能是我见得太少)<br>然后由于Oracle收购了Sun, Java目前虽然在Android开发上很重要, 但是如果Google官司进展不顺利, 那么很有可能用Go语言替代掉Java来做Android开发. 在这计算机速度高速增长的年代里, 选语言都要看他爹的业绩, 真是稍不注意就落后于时代. 随着计算机速度的高速发展, 某种语言开发的软件运行的时间复杂度的常数系数已经不像以前那么重要, 我们可以越来越偏爱为程序员打造的而不是为计算机打造的语言. 比如Ruby这种传说中的纯种而又飘逸的的OOP语言, 或者Python这种稍严谨而流行库又非常多的语言, 都大大弱化了针对计算机运行速度而打造的特性, 强化了为程序员容易思考而打造的特性. 所以我选择Python</p>
+<hr>
+<h3 id="7-选择Python版本"><a href="#7-选择Python版本" class="headerlink" title="7. 选择Python版本"></a>7. 选择Python版本</h3><p>有2和3两个版本, 3比较新, 听说改动大. 根据我在知乎上搜集的观点来看, 我还是倾向于使用”在趋势中将会越来越火”的版本, 而非”目前已经很稳定而且很成熟”的版本. 这是个人喜好, 而且预测不一定准确. 但是如果Python3无法像Python2那么火, 那么整个Python语言就不可避免的随着时间的推移越来越落后, 因此我想其实选哪个的最坏风险都一样, 但是最好回报却是Python3的大. 其实两者区别也可以说大也可以说不大, 最终都不是什么大问题. 我选择的是Python 3</p>
+<hr>
+<h3 id="8-爬虫基本套路"><a href="#8-爬虫基本套路" class="headerlink" title="8. 爬虫基本套路"></a>8. 爬虫基本套路</h3><ul>
+<li>基本流程<ul>
+<li>目标数据</li>
+<li>来源地址</li>
+<li>结构分析</li>
+<li>实现构思</li>
+<li>操刀编码</li>
+</ul>
+</li>
+<li>基本手段<ul>
+<li>破解请求限制<ul>
+<li>请求头设置，如：useragant为有效客户端</li>
+<li>控制请求频率(根据实际情景)</li>
+<li>IP代理</li>
+<li>签名/加密参数从html/cookie/js分析</li>
+</ul>
+</li>
+<li>破解登录授权<ul>
+<li>请求带上用户cookie信息</li>
+</ul>
+</li>
+<li>破解验证码<ul>
+<li>简单的验证码可以使用识图读验证码第三方库</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>解析数据<ul>
+<li>HTML Dom解析<ul>
+<li>正则匹配，通过的正则表达式来匹配想要爬取的数据，如：有些数据不是在html 标签里，而是在html的script 标签的js变量中</li>
+<li>使用第三方库解析html dom，比较喜欢类jquery的库</li>
+</ul>
+</li>
+<li>数据字符串<ul>
+<li>正则匹配(根据情景使用) </li>
+<li>转 JSON/XML 对象进行解析</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="9-python爬虫"><a href="#9-python爬虫" class="headerlink" title="9. python爬虫"></a>9. python爬虫</h3><ul>
+<li>python写爬虫的优势<ul>
+<li>python语法易学，容易上手</li>
+<li>社区活跃，实现方案多可参考</li>
+<li>各种功能包丰富</li>
+<li>少量代码即可完成强大功能</li>
+</ul>
+</li>
+<li>涉及模块包<ul>
+<li>请求<ul>
+<li><code>urllib</code></li>
+<li><code>requests</code></li>
+</ul>
+</li>
+<li>多线程<ul>
+<li><code>threading</code></li>
+</ul>
+</li>
+<li>正则<ul>
+<li><code>re</code></li>
+</ul>
+</li>
+<li>json解析<ul>
+<li><code>json</code></li>
+</ul>
+</li>
+<li>html dom解析<ul>
+<li><code>beautiful soup</code></li>
+</ul>
+</li>
+<li>lxml<ul>
+<li>xpath</li>
+</ul>
+</li>
+<li>操作浏览器<ul>
+<li><code>selenium</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
 
     </div>
 
@@ -276,13 +376,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/04/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="prev" title="操作系统">
-      <i class="fa fa-chevron-left"></i> 操作系统
+    <a href="/2020/04/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="prev" title="计算机网络">
+      <i class="fa fa-chevron-left"></i> 计算机网络
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/04/09/%E7%A7%98%E5%AF%86%E6%8A%A5%E8%AD%A6/" rel="next" title="秘密报警">
-      秘密报警 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -341,6 +438,7 @@
 		
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是爬虫？"><span class="nav-number">1.</span> <span class="nav-text">1. 什么是爬虫？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-有什么作用？"><span class="nav-number">2.</span> <span class="nav-text">2. 有什么作用？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number"></span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-业界的情况"><span class="nav-number">1.</span> <span class="nav-text">3. 业界的情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-合法性"><span class="nav-number">2.</span> <span class="nav-text">4. 合法性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-反爬虫"><span class="nav-number">3.</span> <span class="nav-text">5. 反爬虫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-选择一门语言"><span class="nav-number">4.</span> <span class="nav-text">6. 选择一门语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-选择Python版本"><span class="nav-number">5.</span> <span class="nav-text">7. 选择Python版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-爬虫基本套路"><span class="nav-number">6.</span> <span class="nav-text">8. 爬虫基本套路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-python爬虫"><span class="nav-number">7.</span> <span class="nav-text">9. python爬虫</span></a></li></ol></div>
       </div>
       <!--/noindex-->
       <div class="site-overview-wrap sidebar-panel">
