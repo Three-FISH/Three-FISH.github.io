@@ -168,7 +168,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/15/01.%20%E7%88%AC%E8%99%AB%E4%BB%8B%E7%BB%8D/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/05/music/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/aotang.jpg">
@@ -182,7 +182,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/15/01.%20%E7%88%AC%E8%99%AB%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">01. 爬虫介绍</a>
+            <a href="/2020/05/05/music/" class="post-title-link" itemprop="url">无</a>
         </h2>
 
         <div class="post-meta">
@@ -193,7 +193,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-04-15 11:30:26 / 修改时间：11:30:53" itemprop="dateCreated datePublished" datetime="2020-04-15T11:30:26+08:00">2020-04-15</time>
+              <time title="创建时间：2020-05-05 20:25:29 / 修改时间：20:26:11" itemprop="dateCreated datePublished" datetime="2020-05-05T20:25:29+08:00">2020-05-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -201,7 +201,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">爬虫学习</span></a>
+                  <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">日常学习</span></a>
                 </span>
             </span>
 
@@ -211,7 +211,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
+              <span>0</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -230,111 +230,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517157496430&di=9d8bbd8ae0eb17809b394f8936987b1c&imgtype=0&src=http%3A%2F%2Fimg.mukewang.com%2F57466ffc00015e2f06000338-590-330.jpg" alt="图片"></p>
-<h3 id="1-什么是爬虫？"><a href="#1-什么是爬虫？" class="headerlink" title="1. 什么是爬虫？"></a>1. 什么是爬虫？</h3><p><strong>网络爬虫</strong>也叫<strong>网络蜘蛛</strong>，如果把互联网比喻成一个蜘蛛网，那么蜘蛛就是在网上爬来爬去的蜘蛛，爬虫程序通过请求url地址，根据响应的内容进行解析采集数据，<br>比如：如果响应内容是html，分析dom结构，进行dom解析、或者正则匹配，如果响应内容是xml/json数据，就可以转数据对象，然后对数据进行解析。</p>
-<h3 id="2-有什么作用？"><a href="#2-有什么作用？" class="headerlink" title="2. 有什么作用？"></a>2. 有什么作用？</h3><p>通过有效的爬虫手段批量采集数据，可以降低人工成本，提高有效数据量，给予运营/销售的数据支撑，加快产品发展。 </p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://note.youdao.com/yws/api/personal/file/734769369243449783AC0567A0239F3F?method=download&shareKey=2965ef70a4ffeacd7d29b0a3f3b76cd0" alt="image"></h2><h3 id="3-业界的情况"><a href="#3-业界的情况" class="headerlink" title="3. 业界的情况"></a>3. 业界的情况</h3><p>目前互联网产品竞争激烈，业界大部分都会使用爬虫技术对竞品产品的数据进行挖掘、采集、大数据分析，这是必备手段，并且很多公司都设立了<code>爬虫工程师</code>的岗位</p>
-<hr>
-<h3 id="4-合法性"><a href="#4-合法性" class="headerlink" title="4. 合法性"></a>4. 合法性</h3><p>爬虫是利用程序进行批量爬取网页上的公开信息，也就是前端显示的数据信息。因为信息是完全公开的，所以是合法的。其实就像浏览器一样，浏览器解析响应内容并渲染为页面，而爬虫解析响应内容采集想要的数据进行存储。</p>
-<hr>
-<h3 id="5-反爬虫"><a href="#5-反爬虫" class="headerlink" title="5. 反爬虫"></a>5. 反爬虫</h3><p>爬虫很难完全的制止，道高一尺魔高一丈，这是一场没有硝烟的战争，码农VS码农<br>反爬虫一些手段：</p>
-<ul>
-<li>合法检测：请求校验(useragent，referer，接口加签名，等)</li>
-<li>小黑屋：IP/用户限制请求频率，或者直接拦截</li>
-<li>投毒：反爬虫高境界可以不用拦截，拦截是一时的，投毒返回虚假数据，可以误导竞品决策</li>
-<li>… …</li>
-</ul>
-<hr>
-<h3 id="6-选择一门语言"><a href="#6-选择一门语言" class="headerlink" title="6. 选择一门语言"></a>6. 选择一门语言</h3><p>爬虫可以用各种语言写, C++, Java都可以, 为什么要Python?</p>
-<p>首先用C++搞网络开发的例子不多(可能是我见得太少)<br>然后由于Oracle收购了Sun, Java目前虽然在Android开发上很重要, 但是如果Google官司进展不顺利, 那么很有可能用Go语言替代掉Java来做Android开发. 在这计算机速度高速增长的年代里, 选语言都要看他爹的业绩, 真是稍不注意就落后于时代. 随着计算机速度的高速发展, 某种语言开发的软件运行的时间复杂度的常数系数已经不像以前那么重要, 我们可以越来越偏爱为程序员打造的而不是为计算机打造的语言. 比如Ruby这种传说中的纯种而又飘逸的的OOP语言, 或者Python这种稍严谨而流行库又非常多的语言, 都大大弱化了针对计算机运行速度而打造的特性, 强化了为程序员容易思考而打造的特性. 所以我选择Python</p>
-<hr>
-<h3 id="7-选择Python版本"><a href="#7-选择Python版本" class="headerlink" title="7. 选择Python版本"></a>7. 选择Python版本</h3><p>有2和3两个版本, 3比较新, 听说改动大. 根据我在知乎上搜集的观点来看, 我还是倾向于使用”在趋势中将会越来越火”的版本, 而非”目前已经很稳定而且很成熟”的版本. 这是个人喜好, 而且预测不一定准确. 但是如果Python3无法像Python2那么火, 那么整个Python语言就不可避免的随着时间的推移越来越落后, 因此我想其实选哪个的最坏风险都一样, 但是最好回报却是Python3的大. 其实两者区别也可以说大也可以说不大, 最终都不是什么大问题. 我选择的是Python 3</p>
-<hr>
-<h3 id="8-爬虫基本套路"><a href="#8-爬虫基本套路" class="headerlink" title="8. 爬虫基本套路"></a>8. 爬虫基本套路</h3><ul>
-<li>基本流程<ul>
-<li>目标数据</li>
-<li>来源地址</li>
-<li>结构分析</li>
-<li>实现构思</li>
-<li>操刀编码</li>
-</ul>
-</li>
-<li>基本手段<ul>
-<li>破解请求限制<ul>
-<li>请求头设置，如：useragant为有效客户端</li>
-<li>控制请求频率(根据实际情景)</li>
-<li>IP代理</li>
-<li>签名/加密参数从html/cookie/js分析</li>
-</ul>
-</li>
-<li>破解登录授权<ul>
-<li>请求带上用户cookie信息</li>
-</ul>
-</li>
-<li>破解验证码<ul>
-<li>简单的验证码可以使用识图读验证码第三方库</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>解析数据<ul>
-<li>HTML Dom解析<ul>
-<li>正则匹配，通过的正则表达式来匹配想要爬取的数据，如：有些数据不是在html 标签里，而是在html的script 标签的js变量中</li>
-<li>使用第三方库解析html dom，比较喜欢类jquery的库</li>
-</ul>
-</li>
-<li>数据字符串<ul>
-<li>正则匹配(根据情景使用) </li>
-<li>转 JSON/XML 对象进行解析</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="9-python爬虫"><a href="#9-python爬虫" class="headerlink" title="9. python爬虫"></a>9. python爬虫</h3><ul>
-<li>python写爬虫的优势<ul>
-<li>python语法易学，容易上手</li>
-<li>社区活跃，实现方案多可参考</li>
-<li>各种功能包丰富</li>
-<li>少量代码即可完成强大功能</li>
-</ul>
-</li>
-<li>涉及模块包<ul>
-<li>请求<ul>
-<li><code>urllib</code></li>
-<li><code>requests</code></li>
-</ul>
-</li>
-<li>多线程<ul>
-<li><code>threading</code></li>
-</ul>
-</li>
-<li>正则<ul>
-<li><code>re</code></li>
-</ul>
-</li>
-<li>json解析<ul>
-<li><code>json</code></li>
-</ul>
-</li>
-<li>html dom解析<ul>
-<li><code>beautiful soup</code></li>
-</ul>
-</li>
-<li>lxml<ul>
-<li>xpath</li>
-</ul>
-</li>
-<li>操作浏览器<ul>
-<li><code>selenium</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-
+          
       
     </div>
 
@@ -781,7 +677,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/2020%E5%B9%B44-17/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/aotang.jpg">
@@ -795,7 +691,102 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/08/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2020/04/08/2020%E5%B9%B44-17/" class="post-title-link" itemprop="url">我的周记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-08 13:39:13" itemprop="dateCreated datePublished" datetime="2020-04-08T13:39:13+08:00">2020-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-24 12:51:55" itemprop="dateModified" datetime="2020-04-24T12:51:55+08:00">2020-04-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">日常学习</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="UI基础控件"><a href="#UI基础控件" class="headerlink" title="UI基础控件"></a>UI基础控件</h2><h2 id="Button-shape"><a href="#Button-shape" class="headerlink" title="Button_shape"></a>Button_shape</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;shape xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;&gt;</span><br><span class="line">    &lt;!--边框宽度、颜色设置--&gt;</span><br><span class="line">    &lt;stroke</span><br><span class="line">        android:width&#x3D;&quot;1dp&quot;</span><br><span class="line">        android:color&#x3D;&quot;@android:color&#x2F;white&quot;&#x2F;&gt;</span><br><span class="line">    &lt;!--填充颜色--&gt;</span><br><span class="line">    &lt;solid</span><br><span class="line">        android:color&#x3D;&quot;@android:color&#x2F;transparent&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;shape&gt;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/04/08/2020%E5%B9%B44-17/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/2020-5-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aotang.jpg">
+      <meta itemprop="name" content="三鱼">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三鱼在熬汤">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/08/2020-5-5/" class="post-title-link" itemprop="url">我的周记</a>
         </h2>
 
         <div class="post-meta">
@@ -807,6 +798,22 @@
 
               <time title="创建时间：2020-04-08 13:27:50" itemprop="dateCreated datePublished" datetime="2020-04-08T13:27:50+08:00">2020-04-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-05 20:24:24" itemprop="dateModified" datetime="2020-05-05T20:24:24+08:00">2020-05-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">日常学习</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -814,7 +821,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>357</span>
+              <span>926</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -833,20 +840,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+          <h2 id="Glide"><a href="#Glide" class="headerlink" title="Glide"></a>Glide</h2><ul>
+<li>Android 导入Glide后 com.android.support:appcompat-v7:26.1.0 显示红色波浪线</li>
+<li>将版本为11.0改为implementation ‘com.github.bumptech.glide:glide:4.9.0’</li>
+<li>使用流程：<br>.with()  -创建图片加载实例<br>.load()  -指定加载的图片资源<br>.into() -指定图片的加载控件</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/04/08/2020-5-5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -928,7 +934,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -937,6 +943,10 @@
           
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
@@ -977,12 +987,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">13k</span>
+    <span title="站点总字数">17k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12 分钟</span>
+    <span title="站点阅读时长">15 分钟</span>
 </div>
 
         
