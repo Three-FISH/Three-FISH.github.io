@@ -20,23 +20,22 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="1、安装node.js和git  下载地址：https:&#x2F;&#x2F;nodejs.org&#x2F;en  2、安装Hexo框架  1sudo npm install -g hexo-cli   3、终端进入自己文件夹下的路径，运用熟悉的命令行进行操作换主题：  【注】手动或git克隆到themes中，更改_config.yml（操作时冒号后面有空格）中的themehexo clean 清除hexo g 生成he">
+  <meta name="description" content="一、APP图标的修改1、图表的尺寸 android 512x512 ios 1024x1024 2、在线logo生成工具：https:&#x2F;&#x2F;www.designevo.com&#x2F;cn&#x2F;logo-maker&#x2F; 3、flutter_launcher_icons插件 12345678dev_dependencies:  # icons  flutter_launcher_icons: ^0.7.5flutt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo博客以及迁移到Mac">
-<meta property="og:url" content="http://yoursite.com/2020/08/27/Hexo%E5%8D%9A%E5%AE%A2%E4%BB%A5%E5%8F%8A%E8%BF%81%E7%A7%BB%E5%88%B0Mac/index.html">
+<meta property="og:title" content="图标、启动页、打包发布">
+<meta property="og:url" content="http://yoursite.com/2021/01/10/%E5%9B%BE%E6%A0%87%E3%80%81%E5%90%AF%E5%8A%A8%E9%A1%B5%E3%80%81%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/index.html">
 <meta property="og:site_name" content="三鱼在熬汤">
-<meta property="og:description" content="1、安装node.js和git  下载地址：https:&#x2F;&#x2F;nodejs.org&#x2F;en  2、安装Hexo框架  1sudo npm install -g hexo-cli   3、终端进入自己文件夹下的路径，运用熟悉的命令行进行操作换主题：  【注】手动或git克隆到themes中，更改_config.yml（操作时冒号后面有空格）中的themehexo clean 清除hexo g 生成he">
+<meta property="og:description" content="一、APP图标的修改1、图表的尺寸 android 512x512 ios 1024x1024 2、在线logo生成工具：https:&#x2F;&#x2F;www.designevo.com&#x2F;cn&#x2F;logo-maker&#x2F; 3、flutter_launcher_icons插件 12345678dev_dependencies:  # icons  flutter_launcher_icons: ^0.7.5flutt">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200827135040574.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200827135029682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="article:published_time" content="2020-08-27T05:51:44.000Z">
-<meta property="article:modified_time" content="2020-08-27T05:52:51.900Z">
+<meta property="og:image" content="https://i.loli.net/2021/01/06/a69GTK1SJRozMVZ.png">
+<meta property="article:published_time" content="2021-01-10T05:07:24.945Z">
+<meta property="article:modified_time" content="2021-01-15T13:02:59.799Z">
 <meta property="article:author" content="三鱼">
 <meta property="article:tag" content="三鱼的博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200827135040574.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70#pic_center">
+<meta name="twitter:image" content="https://i.loli.net/2021/01/06/a69GTK1SJRozMVZ.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/08/27/Hexo%E5%8D%9A%E5%AE%A2%E4%BB%A5%E5%8F%8A%E8%BF%81%E7%A7%BB%E5%88%B0Mac/">
+<link rel="canonical" href="http://yoursite.com/2021/01/10/%E5%9B%BE%E6%A0%87%E3%80%81%E5%90%AF%E5%8A%A8%E9%A1%B5%E3%80%81%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/">
 
 
 <script id="page-configurations">
@@ -49,7 +48,7 @@
   };
 </script>
 
-  <title>Hexo博客以及迁移到Mac | 三鱼在熬汤</title>
+  <title>图标、启动页、打包发布 | 三鱼在熬汤</title>
   
 
 
@@ -176,7 +175,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/27/Hexo%E5%8D%9A%E5%AE%A2%E4%BB%A5%E5%8F%8A%E8%BF%81%E7%A7%BB%E5%88%B0Mac/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/10/%E5%9B%BE%E6%A0%87%E3%80%81%E5%90%AF%E5%8A%A8%E9%A1%B5%E3%80%81%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/aotang.jpg">
@@ -189,7 +188,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hexo博客以及迁移到Mac
+          图标、启动页、打包发布
         </h1>
 
         <div class="post-meta">
@@ -198,17 +197,23 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-08-27 13:51:44 / 修改时间：13:52:51" itemprop="dateCreated datePublished" datetime="2020-08-27T13:51:44+08:00">2020-08-27</time>
+              <time title="创建时间：2021-01-10 13:07:24" itemprop="dateCreated datePublished" datetime="2021-01-10T13:07:24+08:00">2021-01-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-15 21:02:59" itemprop="dateModified" datetime="2021-01-15T21:02:59+08:00">2021-01-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">日常学习</span></a>
+                  <a href="/categories/flutter/" itemprop="url" rel="index"><span itemprop="name">flutter</span></a>
                 </span>
             </span>
 
@@ -218,14 +223,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>198</span>
+              <span>1.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -237,19 +242,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <ul>
-<li>1、安装node.js和git</li>
-</ul>
-<p>下载地址：<a href="https://nodejs.org/en" target="_blank" rel="noopener">https://nodejs.org/en</a><br><img src="https://img-blog.csdnimg.cn/20200827135040574.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<ul>
-<li>2、安装Hexo框架</li>
-</ul>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install <span class="literal">-g</span> hexo<span class="literal">-cli</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20200827135029682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<ul>
-<li>3、终端进入自己文件夹下的路径，运用熟悉的命令行进行操作换主题：</li>
-</ul>
-<p>【注】手动或git克隆到themes中，更改_config.yml（操作时冒号后面有空格）中的theme<br>hexo clean 清除<br>hexo g 生成<br>hexo s 启动<br>hexo d 推到GitHub</p>
+        <h4 id="一、APP图标的修改"><a href="#一、APP图标的修改" class="headerlink" title="一、APP图标的修改"></a>一、APP图标的修改</h4><p>1、图表的尺寸</p>
+<p>android 512x512</p>
+<p>ios 1024x1024</p>
+<p>2、在线logo生成工具：<a href="https://www.designevo.com/cn/logo-maker/" target="_blank" rel="noopener">https://www.designevo.com/cn/logo-maker/</a></p>
+<p>3、flutter_launcher_icons插件</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dev_dependencies:</span><br><span class="line">  # icons</span><br><span class="line">  flutter_launcher_icons: ^<span class="number">0.7</span><span class="number">.5</span></span><br><span class="line"></span><br><span class="line">flutter_icons:</span><br><span class="line">  android: <span class="string">"launcher_icon"</span></span><br><span class="line">  ios: <span class="keyword">true</span></span><br><span class="line">  image_path: <span class="string">"assets/icons/logo-1024.png"</span></span><br></pre></td></tr></table></figure>
+
+<p>4、生成图标</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter pub run flutter_launcher_icons:main</span><br></pre></td></tr></table></figure>
+
+<p>5、生成目录</p>
+<p>android/app/src/main/res</p>
+<p>ios/Runner/Assets.xcassets/AppIcon.appiconset</p>
+<h4 id="二、启动图片的修改"><a href="#二、启动图片的修改" class="headerlink" title="二、启动图片的修改"></a>二、启动图片的修改</h4><p>1、在线生成图片：<a href="https://www.canva.cn/" target="_blank" rel="noopener">https://www.canva.cn/</a></p>
+<p>2、在线生成格式工具：<a href="https://hotpot.ai/icon_resizer" target="_blank" rel="noopener">https://hotpot.ai/icon_resizer</a></p>
+<p>3、替换文件夹中的内容：</p>
+<p><img src="https://i.loli.net/2021/01/06/a69GTK1SJRozMVZ.png" alt="2021-01-06_182729.png"></p>
+<p>4、android/app/src/main/res/values/colors.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">"mainColor"</span>&gt;</span>#ffffff<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>5、android/app/src/main/res/drawable/launch_background.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Modify this file to customize your launch splash screen --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">layer-list</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@color/mainColor"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bitmap</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:gravity</span>=<span class="string">"center"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:src</span>=<span class="string">"@mipmap/launch_image"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">layer-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="三、Android-发布"><a href="#三、Android-发布" class="headerlink" title="三、Android 发布"></a>三、Android 发布</h4><p>1、生成证书：</p>
+<p>cd android/app/</p>
+<p>keytool -genkey -v -keystore ./key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key</p>
+<p>输出文件：android/app/key.jks</p>
+<p>2、android/key.properties</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">storePassword=123456</span><br><span class="line">keyPassword=123456</span><br><span class="line">keyAlias=key</span><br><span class="line">storeFile=./key.jks</span><br></pre></td></tr></table></figure>
+
+<p>3、修改版本号：pubspec.yaml</p>
+<p>version: 1.0.0+1</p>
+<p>4、修改程序名称：android/app/src/main/AndroidManifest.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">"io.flutter.app.FlutterApplication"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:label</span>=<span class="string">"应用名称"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:icon</span>=<span class="string">"@mipmap/launcher_icon"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>5、设置网络权限：android/app/src/main/AndroidManifest.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.INTERNET"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>6、编译打包</p>
+<p>flutter build apk –split-per-abi</p>
 
     </div>
 
@@ -265,12 +297,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/08/22/Everything%20will%20be%20fine/" rel="prev" title="Everything will be fine">
-      <i class="fa fa-chevron-left"></i> Everything will be fine
+    <a href="/2020/12/27/2020-%E5%B0%98%E5%9F%83%E8%90%BD%E5%AE%9A%EF%BC%8C%E5%8D%B7%E5%9C%9F%E9%87%8D%E6%9D%A5/" rel="prev" title="2020-尘埃落定，卷土重来">
+      <i class="fa fa-chevron-left"></i> 2020-尘埃落定，卷土重来
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/10/19/git%E5%9F%BA%E7%A1%80/" rel="next" title="git基础">
-      git基础 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/01/15/mac-ios%E6%A8%A1%E6%8B%9F%E5%99%A8/" rel="next" title="mac-ios模拟器">
+      mac-ios模拟器 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -330,6 +362,7 @@
 		
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、APP图标的修改"><span class="nav-number">1.</span> <span class="nav-text">一、APP图标的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、启动图片的修改"><span class="nav-number">2.</span> <span class="nav-text">二、启动图片的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、Android-发布"><span class="nav-number">3.</span> <span class="nav-text">三、Android 发布</span></a></li></ol></div>
       </div>
       <!--/noindex-->
       <div class="site-overview-wrap sidebar-panel">
