@@ -168,6 +168,120 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/15/le%20e%20t%20co%20de/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aotang.jpg">
+      <meta itemprop="name" content="三鱼">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三鱼在熬汤">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/15/le%20e%20t%20co%20de/" class="post-title-link" itemprop="url">le e t co de</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-15 16:12:33" itemprop="dateCreated datePublished" datetime="2021-03-15T16:12:33+08:00">2021-03-15</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一、链表：</p>
+<p>1、双指针</p>
+<p>2、快慢指针</p>
+<p>3、递归</p>
+<p>二、递归、回溯、分治</p>
+<h4 id="三、树"><a href="#三、树" class="headerlink" title="三、树"></a>三、树</h4><p>【内容】</p>
+<ul>
+<li><p>树的基本概念和术语; </p>
+</li>
+<li><p>树的前序,中序,后序,层次序遍历;</p>
+</li>
+<li><p>二叉树及其性质;</p>
+</li>
+<li><p>普通树与二叉树的转换; </p>
+</li>
+<li><p>树的存储结构,标准形式;完全树(complete tree)的数组形式存储;</p>
+</li>
+<li><p>树的应用,Huffman树的定义与应用;</p>
+</li>
+</ul>
+<p>四、图</p>
+<p>内容:</p>
+<p>图的基本概念;</p>
+<p>图的存储结构,邻接矩阵, 邻接表;</p>
+<p>图的遍历,广度度优先遍历和深度优先遍历;</p>
+<p>最小生成树基本概念 ,Prim算法 ,Kruskal算法;</p>
+<p> 最短路径问题 , 广度优先遍历算法,Dijkstra 算法 ,Floyd算法 ;</p>
+<p>拓扑排序;</p>
+<h4 id="五、查找-sea-rch"><a href="#五、查找-sea-rch" class="headerlink" title="五、查找(sea rch)"></a>五、查找(sea rch)</h4><p>【内容】</p>
+<p>查找的基本概念;对线性关系结构的查找,顺序查找,二分查找;</p>
+<p>Hash查找法,常见的Hash函数(直接定址法,随机数法),hash冲突的概念,解决冲突的方法(开散列方法/拉链法,闭散</p>
+<p>列方法/开址定址法),二次聚集现象;</p>
+<p>BST树定义,性质,ADT及其实现,BST树查找,插入,删除算法;</p>
+<p>平衡树(AVL)的定义,性质,ADT及其实现,平衡树查找,插入算法,平衡因子的概念;</p>
+<p>优先队列与堆,堆的定义,堆的生成,调整算法;范围查询; </p>
+<h4 id="六、排序"><a href="#六、排序" class="headerlink" title="六、排序"></a>六、排序</h4><p>【内容】</p>
+<ul>
+<li>排序基本概念;</li>
+<li>插入排序,希尔排序,选择排序,快速排序,合并排序,基数排序等排序算法基本思想,算法代码及基本的时间复杂度分析</li>
+</ul>
+<p>4、快速排序：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quicksort</span><span class="params">(<span class="keyword">int</span> n[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> dp;</span><br><span class="line">	<span class="keyword">if</span> (left &lt; right) &#123;</span><br><span class="line">		dp = partition(n, left, right);</span><br><span class="line">		quicksort(n, left, dp - <span class="number">1</span>);</span><br><span class="line">		quicksort(n, dp + <span class="number">1</span>, right);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span> n[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> pivot = n[left];</span><br><span class="line">	<span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">		<span class="keyword">while</span> (left &lt; right &amp;&amp; n[right] &gt;= pivot)</span><br><span class="line">			right--;</span><br><span class="line">		<span class="keyword">if</span> (left &lt; right)</span><br><span class="line">			n[left++] = n[right];</span><br><span class="line">		<span class="keyword">while</span> (left &lt; right &amp;&amp; n[left] &lt;= pivot)</span><br><span class="line">			left++;</span><br><span class="line">		<span class="keyword">if</span> (left &lt; right)</span><br><span class="line">			n[right--] = n[left];</span><br><span class="line">	&#125;</span><br><span class="line">	n[left] = pivot;</span><br><span class="line">	<span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5、归并排序：</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/08/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -191,10 +305,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-03-08 11:21:52 / 修改时间：20:53:16" itemprop="dateCreated datePublished" datetime="2021-03-08T11:21:52+08:00">2021-03-08</time>
+              <time title="创建时间：2021-03-08 11:21:52" itemprop="dateCreated datePublished" datetime="2021-03-08T11:21:52+08:00">2021-03-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 11:20:38" itemprop="dateModified" datetime="2021-03-18T11:20:38+08:00">2021-03-18</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -211,14 +331,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.4k</span>
+              <span>4.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -230,11 +350,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="一、初始mysql数据库"><a href="#一、初始mysql数据库" class="headerlink" title="一、初始mysql数据库"></a>一、初始mysql数据库</h4><h5 id="1、终端登录出现问题："><a href="#1、终端登录出现问题：" class="headerlink" title="1、终端登录出现问题："></a>1、终端登录出现问题：</h5><p>【报错】ERROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘/tmp/mysql.sock’ (2)</p>
+          <h4 id="初始mysql数据库"><a href="#初始mysql数据库" class="headerlink" title="初始mysql数据库"></a>初始mysql数据库</h4><h5 id="终端登录出现问题："><a href="#终端登录出现问题：" class="headerlink" title="终端登录出现问题："></a>终端登录出现问题：</h5><p>【报错】ERROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘/tmp/mysql.sock’ (2)</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql --version</span><br><span class="line"></span><br><span class="line">mysql -h 127.0.0.1 -u root -p</span><br></pre></td></tr></table></figure>
 
 <p>【报错】Can’t connect to MySQL server on ‘127.0.0.1’ (61)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/local/Cellar/mysql/8.0.22_1/support-files/mysql.server</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/local/Cellar/mysql/8.0.22_1/support-files/mysql.server start</span><br></pre></td></tr></table></figure>
 
 <p>【报错】. ERROR! The server quit without updating PID file (/usr/local/var/mysql/wangyaodeMac-mini.local.pid).</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R _mysql /usr/local/var/mysql</span><br><span class="line"></span><br><span class="line">sudo /usr/local/Cellar/mysql/8.0.22_1/support-files/mysql.server restart</span><br></pre></td></tr></table></figure>
@@ -242,127 +362,108 @@
 <p>【启动成功】 ERROR! MySQL server PID file could not be found!</p>
 <p>Starting MySQL</p>
 <p>. SUCCESS! </p>
-<h5 id="2、终端操作数据库："><a href="#2、终端操作数据库：" class="headerlink" title="2、终端操作数据库："></a>2、终端操作数据库：</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">show global variables like ‘port’; #查看mysql服务端口号</span><br><span class="line"></span><br><span class="line">show databases; #查看有数据库</span><br><span class="line"></span><br><span class="line">use databasesName; #选择数据库</span><br><span class="line"></span><br><span class="line">show tables; #查看该数据库中有哪些表</span><br><span class="line"></span><br><span class="line">exit; #退出数据库</span><br></pre></td></tr></table></figure>
+<h5 id="终端操作数据库："><a href="#终端操作数据库：" class="headerlink" title="终端操作数据库："></a>终端操作数据库：</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">show global variables like ‘port’; #查看mysql服务端口号</span><br><span class="line"></span><br><span class="line">show databases; #查看有数据库</span><br><span class="line"></span><br><span class="line">use databasesName; #选择数据库</span><br><span class="line"></span><br><span class="line">show tables; #查看该数据库中有哪些表</span><br><span class="line"></span><br><span class="line">exit; #退出数据库</span><br></pre></td></tr></table></figure>
 
-<h5 id="3、规范："><a href="#3、规范：" class="headerlink" title="3、规范："></a>3、规范：</h5><ul>
+<h5 id="规范："><a href="#规范：" class="headerlink" title="规范："></a>规范：</h5><ul>
 <li>每条命令分号结尾；</li>
 <li>不区分大小写，关键字建议大写，表名列名小写；</li>
 <li>每条命令根据需要锁进和换行；</li>
 <li>注释：#注释文字 –注释文字  /**/ 多行文字注释。</li>
 </ul>
-<h4 id="二、DQL学习"><a href="#二、DQL学习" class="headerlink" title="二、DQL学习"></a>二、DQL学习</h4><h5 id="1、基础查询"><a href="#1、基础查询" class="headerlink" title="1、基础查询"></a>1、基础查询</h5><p>查询表中的单个字段</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employee_id <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
+<h4 id="DQL学习"><a href="#DQL学习" class="headerlink" title="DQL学习"></a>DQL学习</h4><h5 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h5><h6 id="查询表中的单个字段"><a href="#查询表中的单个字段" class="headerlink" title="查询表中的单个字段"></a>查询表中的单个字段</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employee_id <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
 
-<p>查询表中的多个字段</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employee_id,first_name,job_id <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
+<h6 id="查询表中的多个字段"><a href="#查询表中的多个字段" class="headerlink" title="查询表中的多个字段"></a>查询表中的多个字段</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employee_id,first_name,job_id <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
 
-<p>查询表中的所有字段</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
+<h6 id="查询表中的所有字段"><a href="#查询表中的所有字段" class="headerlink" title="查询表中的所有字段"></a>查询表中的所有字段</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
 
-<p>起别名</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name <span class="keyword">AS</span> 姓,first_name <span class="keyword">AS</span> 名 <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
+<h6 id="起别名"><a href="#起别名" class="headerlink" title="起别名"></a>起别名</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name <span class="keyword">AS</span> 姓,first_name <span class="keyword">AS</span> 名 <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
 
-<p>去重</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> job_id <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
+<h6 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> job_id <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
 
-<p>字符拼接</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>(last_name,<span class="string">'-'</span>,first_name) <span class="keyword">AS</span> 姓名 <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
+<h6 id="字符拼接"><a href="#字符拼接" class="headerlink" title="字符拼接"></a>字符拼接</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>(last_name,<span class="string">'-'</span>,first_name) <span class="keyword">AS</span> 姓名 <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
 
-<p> IFNULL函数用法</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">IFNULL</span>(commission_pct,<span class="number">0</span>) <span class="keyword">AS</span> 奖金率,commission_pct <span class="keyword">FROM</span> employees;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">IFNULL</span>(manager_id,<span class="number">1</span>) <span class="keyword">AS</span> 管理编号,manager_id <span class="keyword">FROM</span> departments;</span><br></pre></td></tr></table></figure>
+<h6 id="IFNULL函数用法"><a href="#IFNULL函数用法" class="headerlink" title="IFNULL函数用法"></a>IFNULL函数用法</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">IFNULL</span>(commission_pct,<span class="number">0</span>) <span class="keyword">AS</span> 奖金率,commission_pct <span class="keyword">FROM</span> employees;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">IFNULL</span>(manager_id,<span class="number">1</span>) <span class="keyword">AS</span> 管理编号,manager_id <span class="keyword">FROM</span> departments;</span><br></pre></td></tr></table></figure>
 
-<h5 id="2、条件查询"><a href="#2、条件查询" class="headerlink" title="2、条件查询"></a>2、条件查询</h5><p>运算符条件</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> salary&gt;<span class="number">15000</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h5><h6 id="运算符条件"><a href="#运算符条件" class="headerlink" title="运算符条件"></a>运算符条件</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> salary&gt;<span class="number">15000</span>;</span><br></pre></td></tr></table></figure>
 
-<p>逻辑表达式查询</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> salary&gt;<span class="number">10000</span> <span class="keyword">AND</span> salary&lt;<span class="number">20000</span>;</span><br></pre></td></tr></table></figure>
+<h6 id="逻辑表达式查询"><a href="#逻辑表达式查询" class="headerlink" title="逻辑表达式查询"></a>逻辑表达式查询</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> salary&gt;<span class="number">10000</span> <span class="keyword">AND</span> salary&lt;<span class="number">20000</span>;</span><br></pre></td></tr></table></figure>
 
-<h5 id="3、模糊查询"><a href="#3、模糊查询" class="headerlink" title="3、模糊查询"></a>3、模糊查询</h5><p>like关键字</p>
-<p>【使用】一般和通配符搭配使用，%表示多个字值，_ 下划线表示一个字符；</p>
+<h5 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h5><h6 id="like关键字"><a href="#like关键字" class="headerlink" title="like关键字"></a>like关键字</h6><p>【使用】一般和通配符搭配使用，%表示多个字值，_ 下划线表示一个字符；</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> last_name <span class="keyword">LIKE</span> <span class="string">'%a'</span>; <span class="comment">--结尾为a</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> last_name <span class="keyword">LIKE</span> <span class="string">'%a%'</span>; <span class="comment">--包含a</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> last_name <span class="keyword">LIKE</span> <span class="string">'__c_h%'</span>; <span class="comment">--第三个字符为c第五个字符为h</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> last_name <span class="keyword">LIKE</span> <span class="string">'%a_'</span>; <span class="comment">--倒是第二位为a</span></span><br></pre></td></tr></table></figure>
 
-<p>ESCAPE 转义字符</p>
-<p>【使用】后跟指定的转义字符</p>
+<h6 id="ESCAPE-转义字符"><a href="#ESCAPE-转义字符" class="headerlink" title="ESCAPE 转义字符"></a>ESCAPE 转义字符</h6><p>【使用】后跟指定的转义字符</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> last_name <span class="keyword">LIKE</span> <span class="string">'_$_%'</span> ESCAPE <span class="string">'$'</span>;<span class="comment">#K_ing ; A_ing</span></span><br></pre></td></tr></table></figure>
 
-<p>between and 关键字</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> salary <span class="keyword">BETWEEN</span> <span class="number">10000</span> <span class="keyword">AND</span> <span class="number">20000</span>;</span><br></pre></td></tr></table></figure>
+<h6 id="between-and-关键字"><a href="#between-and-关键字" class="headerlink" title="between and 关键字"></a>between and 关键字</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> salary <span class="keyword">BETWEEN</span> <span class="number">10000</span> <span class="keyword">AND</span> <span class="number">20000</span>;</span><br></pre></td></tr></table></figure>
 
-<p>in 关键字</p>
-<p>【使用】判断某字段是否属于in列表中的某一项</p>
+<h6 id="in-关键字"><a href="#in-关键字" class="headerlink" title="in 关键字"></a>in 关键字</h6><p>【使用】判断某字段是否属于in列表中的某一项</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> first_name,salary <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> salary <span class="keyword">IN</span>(<span class="number">10000</span>,<span class="number">12000</span>);</span><br></pre></td></tr></table></figure>
 
-<p>is null 关键字</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>(last_name,<span class="string">'-'</span>,first_name) <span class="keyword">AS</span> 姓名,commission_pct <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> commission_pct <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+<h6 id="is-null-关键字"><a href="#is-null-关键字" class="headerlink" title="is null 关键字"></a>is null 关键字</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>(last_name,<span class="string">'-'</span>,first_name) <span class="keyword">AS</span> 姓名,commission_pct <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> commission_pct <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
 
 <p><img src="http://cdn.baishew.com/hidove-images/2021/03/05/6041efe750675.jpg" alt="&#39;6041efe750675.jpg&#39;"></p>
-<h5 id="4、排序查询"><a href="#4、排序查询" class="headerlink" title="4、排序查询"></a>4、排序查询</h5><p>order by 关键字</p>
-<p>【使用】 DESC 降序；ASC 升序；默认升序</p>
+<h5 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h5><h6 id="order-by-关键字"><a href="#order-by-关键字" class="headerlink" title="order by 关键字"></a>order by 关键字</h6><p>【使用】 DESC 降序；ASC 升序；默认升序</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">ORDER</span> <span class="keyword">BY</span> salary <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
 
-<p>表达式排序</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *,salary*<span class="number">12</span>*(<span class="number">1</span>+<span class="keyword">IFNULL</span>(commission_pct,<span class="number">0</span>)) <span class="keyword">AS</span> 年薪 <span class="keyword">FROM</span> employees <span class="keyword">ORDER</span> <span class="keyword">BY</span> 年薪 <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+<h6 id="表达式排序"><a href="#表达式排序" class="headerlink" title="表达式排序"></a>表达式排序</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *,salary*<span class="number">12</span>*(<span class="number">1</span>+<span class="keyword">IFNULL</span>(commission_pct,<span class="number">0</span>)) <span class="keyword">AS</span> 年薪 <span class="keyword">FROM</span> employees <span class="keyword">ORDER</span> <span class="keyword">BY</span> 年薪 <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
 
-<p>按函数排序</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">LENGTH</span>(last_name) <span class="keyword">AS</span> 字节长度,last_name,salary <span class="keyword">FROM</span> employees <span class="keyword">ORDER</span> <span class="keyword">BY</span> 字节长度 <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+<h6 id="按函数排序"><a href="#按函数排序" class="headerlink" title="按函数排序"></a>按函数排序</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">LENGTH</span>(last_name) <span class="keyword">AS</span> 字节长度,last_name,salary <span class="keyword">FROM</span> employees <span class="keyword">ORDER</span> <span class="keyword">BY</span> 字节长度 <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
 
-<p>嵌套排序</p>
-<p>先按工资降序排序，再按员工编号升序排序；</p>
+<h6 id="嵌套排序"><a href="#嵌套排序" class="headerlink" title="嵌套排序"></a>嵌套排序</h6><p>先按工资降序排序，再按员工编号升序排序；</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name,salary,employee_id <span class="keyword">FROM</span> employees <span class="keyword">ORDER</span> <span class="keyword">BY</span> salary <span class="keyword">DESC</span> ,employee_id <span class="keyword">ASC</span>;</span><br></pre></td></tr></table></figure>
 
-<h5 id="5、常见函数"><a href="#5、常见函数" class="headerlink" title="5、常见函数"></a>5、常见函数</h5><p>length 获取参数值的字节数</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">LENGTH</span>(<span class="string">'myemployees'</span>);</span><br></pre></td></tr></table></figure>
+<h5 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h5><h6 id="length-获取参数值的字节数"><a href="#length-获取参数值的字节数" class="headerlink" title="length 获取参数值的字节数"></a>length 获取参数值的字节数</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">LENGTH</span>(<span class="string">'myemployees'</span>);</span><br></pre></td></tr></table></figure>
 
-<p>concat 拼接字符串</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>(<span class="string">'my'</span>,<span class="string">'-'</span>,<span class="string">'name'</span>);</span><br></pre></td></tr></table></figure>
+<h6 id="concat-拼接字符串"><a href="#concat-拼接字符串" class="headerlink" title="concat 拼接字符串"></a>concat 拼接字符串</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>(<span class="string">'my'</span>,<span class="string">'-'</span>,<span class="string">'name'</span>);</span><br></pre></td></tr></table></figure>
 
-<p>upper、lower 转换大小写</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>(<span class="keyword">UPPER</span>(last_name),<span class="string">'@'</span>,<span class="keyword">LOWER</span>(first_name)) <span class="keyword">AS</span> 姓名 <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
+<h6 id="upper、lower-转换大小写"><a href="#upper、lower-转换大小写" class="headerlink" title="upper、lower 转换大小写"></a>upper、lower 转换大小写</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>(<span class="keyword">UPPER</span>(last_name),<span class="string">'@'</span>,<span class="keyword">LOWER</span>(first_name)) <span class="keyword">AS</span> 姓名 <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
 
-<p>substr、substring (str,a,b) 截取从字符str指定索引a之后的字符长度为b ；索引从1开始</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">SUBSTR</span>(<span class="string">'mynameissanyu'</span>,<span class="number">9</span>,<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<h6 id="substr、substring-str-a-b-截取从字符str指定索引a之后的字符长度为b-；索引从1开始"><a href="#substr、substring-str-a-b-截取从字符str指定索引a之后的字符长度为b-；索引从1开始" class="headerlink" title="substr、substring (str,a,b) 截取从字符str指定索引a之后的字符长度为b ；索引从1开始"></a>substr、substring (str,a,b) 截取从字符str指定索引a之后的字符长度为b ；索引从1开始</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">SUBSTR</span>(<span class="string">'mynameissanyu'</span>,<span class="number">9</span>,<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
 
 <p> <img src="http://cdn.baishew.com/hidove-images/2021/03/05/6041fae772009.jpg" alt="&#39;6041fae772009.jpg&#39;"></p>
-<p>instr 返回子串在原字符串中的起始索引</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">INSTR</span>(<span class="string">'mynamesanyu'</span>,<span class="string">'sanyu'</span>) <span class="keyword">AS</span> <span class="string">'position'</span> ;</span><br></pre></td></tr></table></figure>
+<h6 id="instr-返回子串在原字符串中的起始索引"><a href="#instr-返回子串在原字符串中的起始索引" class="headerlink" title="instr 返回子串在原字符串中的起始索引"></a>instr 返回子串在原字符串中的起始索引</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">INSTR</span>(<span class="string">'mynamesanyu'</span>,<span class="string">'sanyu'</span>) <span class="keyword">AS</span> <span class="string">'position'</span> ;</span><br></pre></td></tr></table></figure>
 
 <p><img src="http://cdn.baishew.com/hidove-images/2021/03/08/60458801cbd9d.jpg" alt="&#39;60458801cbd9d.jpg&#39;"></p>
-<p>trim 去除指定字符</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">TRIM</span>(<span class="string">'  mynamesanyu  '</span>) <span class="keyword">AS</span> <span class="keyword">output</span>;  <span class="comment">--删除空格</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">TRIM</span>(<span class="keyword">LEADING</span> <span class="string">'my'</span> <span class="keyword">FROM</span> <span class="string">'mynamesanyu'</span>) <span class="keyword">AS</span> <span class="keyword">output</span>; <span class="comment">--删除指定的首字符my</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">TRIM</span>(<span class="keyword">BOTH</span> <span class="string">'m'</span> <span class="keyword">FROM</span> <span class="string">'mmmynamesanyummm'</span>) <span class="keyword">AS</span> <span class="keyword">output</span>; <span class="comment">--删除指定的首尾字符m</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">TRIM</span>(TRAILING <span class="string">'sanyu'</span> <span class="keyword">FROM</span> <span class="string">'mynamesanyu'</span>) <span class="keyword">AS</span> <span class="keyword">output</span>;<span class="comment">--删除指定的尾字符sanyu</span></span><br></pre></td></tr></table></figure>
+<h6 id="trim-去除指定字符"><a href="#trim-去除指定字符" class="headerlink" title="trim 去除指定字符"></a>trim 去除指定字符</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">TRIM</span>(<span class="string">'  mynamesanyu  '</span>) <span class="keyword">AS</span> <span class="keyword">output</span>;  <span class="comment">--删除空格</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">TRIM</span>(<span class="keyword">LEADING</span> <span class="string">'my'</span> <span class="keyword">FROM</span> <span class="string">'mynamesanyu'</span>) <span class="keyword">AS</span> <span class="keyword">output</span>; <span class="comment">--删除指定的首字符my</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">TRIM</span>(<span class="keyword">BOTH</span> <span class="string">'m'</span> <span class="keyword">FROM</span> <span class="string">'mmmynamesanyummm'</span>) <span class="keyword">AS</span> <span class="keyword">output</span>; <span class="comment">--删除指定的首尾字符m</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">TRIM</span>(TRAILING <span class="string">'sanyu'</span> <span class="keyword">FROM</span> <span class="string">'mynamesanyu'</span>) <span class="keyword">AS</span> <span class="keyword">output</span>;<span class="comment">--删除指定的尾字符sanyu</span></span><br></pre></td></tr></table></figure>
 
-<p>ltrim 去除左空格函数</p>
-<p>rtrim 去除右空格函数 </p>
-<p>lpad 指定字符左填充</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">LPAD</span>(<span class="string">'sanyu'</span>,<span class="number">10</span>,<span class="string">'myname'</span>) <span class="keyword">AS</span> <span class="keyword">output</span>; <span class="comment">--mynamsanyu</span></span><br></pre></td></tr></table></figure>
+<h6 id="ltrim-去除左空格函数"><a href="#ltrim-去除左空格函数" class="headerlink" title="ltrim 去除左空格函数"></a>ltrim 去除左空格函数</h6><h6 id="rtrim-去除右空格函数"><a href="#rtrim-去除右空格函数" class="headerlink" title="rtrim 去除右空格函数"></a>rtrim 去除右空格函数</h6><h6 id="lpad-指定字符左填充"><a href="#lpad-指定字符左填充" class="headerlink" title="lpad 指定字符左填充"></a>lpad 指定字符左填充</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">LPAD</span>(<span class="string">'sanyu'</span>,<span class="number">10</span>,<span class="string">'myname'</span>) <span class="keyword">AS</span> <span class="keyword">output</span>; <span class="comment">--mynamsanyu</span></span><br></pre></td></tr></table></figure>
 
-<p>rpad 指定字符右填充</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> RPAD(<span class="string">'sanyu'</span>,<span class="number">11</span>,<span class="string">'myname'</span>) <span class="keyword">AS</span> <span class="keyword">output</span>; <span class="comment">--sanyumyname</span></span><br></pre></td></tr></table></figure>
+<h6 id="rpad-指定字符右填充"><a href="#rpad-指定字符右填充" class="headerlink" title="rpad 指定字符右填充"></a>rpad 指定字符右填充</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> RPAD(<span class="string">'sanyu'</span>,<span class="number">11</span>,<span class="string">'myname'</span>) <span class="keyword">AS</span> <span class="keyword">output</span>; <span class="comment">--sanyumyname</span></span><br></pre></td></tr></table></figure>
 
 <p>replace 字符替换</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">REPLACE</span>(job_id,<span class="string">"IT_PROG"</span>,<span class="string">"banzhuanren"</span>) <span class="keyword">AS</span> 搬砖人,salary <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> job_id =<span class="string">"IT_PROG"</span>;</span><br></pre></td></tr></table></figure>
 
 <p><img src="http://cdn.baishew.com/hidove-images/2021/03/08/6045909b97056.jpg" alt="&#39;6045909b97056.jpg&#39;"></p>
-<h5 id="6、数学函数"><a href="#6、数学函数" class="headerlink" title="6、数学函数"></a>6、数学函数</h5><p>round 四舍五入</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">ROUND</span>(commission_pct,<span class="number">1</span>) <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> commission_pct <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h5><h6 id="round-四舍五入"><a href="#round-四舍五入" class="headerlink" title="round 四舍五入"></a>round 四舍五入</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">ROUND</span>(commission_pct,<span class="number">1</span>) <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> commission_pct <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
 
 <p><img src="http://cdn.baishew.com/hidove-images/2021/03/08/604592e04f50b.jpg" alt="&#39;604592e04f50b.jpg&#39;"></p>
-<p>ceil 向上取整</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CEIL</span>(<span class="number">11.22</span>); <span class="comment">--12</span></span><br></pre></td></tr></table></figure>
+<h6 id="ceil-向上取整"><a href="#ceil-向上取整" class="headerlink" title="ceil 向上取整"></a>ceil 向上取整</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CEIL</span>(<span class="number">11.22</span>); <span class="comment">--12</span></span><br></pre></td></tr></table></figure>
 
-<p>truncate 截断</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">TRUNCATE</span>(<span class="number">11.221</span>,<span class="number">1</span>); <span class="comment">--11.2</span></span><br></pre></td></tr></table></figure>
+<h6 id="truncate-截断"><a href="#truncate-截断" class="headerlink" title="truncate 截断"></a>truncate 截断</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">TRUNCATE</span>(<span class="number">11.221</span>,<span class="number">1</span>); <span class="comment">--11.2</span></span><br></pre></td></tr></table></figure>
 
-<p>mod 取余</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">MOD</span>(<span class="number">11</span>,<span class="number">2</span>); <span class="comment">--1</span></span><br></pre></td></tr></table></figure>
+<h6 id="mod-取余"><a href="#mod-取余" class="headerlink" title="mod 取余"></a>mod 取余</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">MOD</span>(<span class="number">11</span>,<span class="number">2</span>); <span class="comment">--1</span></span><br></pre></td></tr></table></figure>
 
-<h5 id="7、日期函数"><a href="#7、日期函数" class="headerlink" title="7、日期函数"></a>7、日期函数</h5><p>返回当前日期或者时间</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">NOW</span>() <span class="keyword">AS</span> 年月日时分秒,<span class="keyword">CURRENT_DATE</span>() <span class="keyword">AS</span> 年月日,<span class="keyword">CURRENT_TIME</span>() <span class="keyword">AS</span> 时分秒;</span><br></pre></td></tr></table></figure>
+<h5 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h5><h6 id="返回当前日期或者时间"><a href="#返回当前日期或者时间" class="headerlink" title="返回当前日期或者时间"></a>返回当前日期或者时间</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">NOW</span>() <span class="keyword">AS</span> 年月日时分秒,<span class="keyword">CURRENT_DATE</span>() <span class="keyword">AS</span> 年月日,<span class="keyword">CURRENT_TIME</span>() <span class="keyword">AS</span> 时分秒;</span><br></pre></td></tr></table></figure>
 
-<p>获取日期指定部分</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">YEAR</span>(<span class="keyword">NOW</span>()) 年;</span><br></pre></td></tr></table></figure>
+<h6 id="获取日期指定部分year-month-day-minute-second"><a href="#获取日期指定部分year-month-day-minute-second" class="headerlink" title="获取日期指定部分year/month/day/minute/second"></a>获取日期指定部分year/month/day/minute/second</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">YEAR</span>(<span class="keyword">NOW</span>()) <span class="keyword">AS</span> 年;</span><br></pre></td></tr></table></figure>
 
-<p>str_to_date 将字符通过指定格式转换成日期</p>
-<p>date_format 日期转换成字符</p>
+<h6 id="datediff-计算两个日期之差"><a href="#datediff-计算两个日期之差" class="headerlink" title="datediff 计算两个日期之差"></a>datediff 计算两个日期之差</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DATEDIFF</span>(<span class="string">'2021-1-1'</span>,<span class="string">'2021-3-1'</span>) <span class="keyword">AS</span> <span class="keyword">output</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://cdn.baishew.com/hidove-images/2021/03/09/6046d560a9706.jpg" alt="&#39;6046d560a9706.jpg&#39;"></p>
+<h6 id="str-to-date-将字符通过指定格式转换成日期"><a href="#str-to-date-将字符通过指定格式转换成日期" class="headerlink" title="str_to_date 将字符通过指定格式转换成日期"></a>str_to_date 将字符通过指定格式转换成日期</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> hiredate = <span class="keyword">STR_TO_DATE</span>(<span class="string">'4/3/1992'</span>,<span class="string">'%m/%d/%Y'</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://cdn.baishew.com/hidove-images/2021/03/09/6046d439af4c5.jpg" alt="&#39;6046d439af4c5.jpg&#39;"></p>
+<h6 id="date-format-日期转换成字符"><a href="#date-format-日期转换成字符" class="headerlink" title="date_format 日期转换成字符"></a>date_format 日期转换成字符</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DATE_FORMAT</span>(<span class="keyword">NOW</span>(),<span class="string">'%y年%m月%d日'</span>) <span class="keyword">AS</span> <span class="keyword">output</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Sql查询"><a href="#Sql查询" class="headerlink" title="Sql查询"></a>Sql查询</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">基本语法：</span><br><span class="line"><span class="keyword">select</span> 查询列表     <span class="comment">--7</span></span><br><span class="line"><span class="keyword">from</span> 表<span class="number">1</span> 别名       <span class="comment">--1</span></span><br><span class="line">连接类型 <span class="keyword">join</span> 表<span class="number">2</span>    <span class="comment">--2</span></span><br><span class="line"><span class="keyword">on</span> 连接条件          <span class="comment">--3</span></span><br><span class="line"><span class="keyword">where</span> 筛选          <span class="comment">--4</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 分组列表    <span class="comment">--5</span></span><br><span class="line"><span class="keyword">having</span> 筛选         <span class="comment">--6</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 排序列表    <span class="comment">--8</span></span><br><span class="line"><span class="keyword">limit</span> 起始条目索引，条目数</span><br></pre></td></tr></table></figure>
+
+<h5 id="流程控制函数"><a href="#流程控制函数" class="headerlink" title="流程控制函数"></a>流程控制函数</h5><h6 id="if"><a href="#if" class="headerlink" title="if"></a>if</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	last_name,</span><br><span class="line">	commission_pct,</span><br><span class="line"><span class="keyword">IF</span></span><br><span class="line">	( commission_pct <span class="keyword">IS</span> <span class="literal">NULL</span>, <span class="string">'有奖金'</span>, <span class="string">'没奖金'</span> ) <span class="keyword">AS</span> 备注 </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	employees;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://cdn.baishew.com/hidove-images/2021/03/09/6046d986d8cf2.jpg" alt="&#39;6046d986d8cf2.jpg&#39;"></p>
+<h6 id="case"><a href="#case" class="headerlink" title="case"></a>case</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	salary <span class="keyword">AS</span> 原始工资,</span><br><span class="line">	commission_pct,</span><br><span class="line"><span class="keyword">CASE</span></span><br><span class="line">		commission_pct </span><br><span class="line">		<span class="keyword">WHEN</span> <span class="number">0.4</span> <span class="keyword">THEN</span></span><br><span class="line">		salary * <span class="number">1.4</span> </span><br><span class="line">		<span class="keyword">WHEN</span> <span class="number">0.35</span> <span class="keyword">THEN</span></span><br><span class="line">		salary * <span class="number">1.35</span> </span><br><span class="line">		<span class="keyword">ELSE</span> salary</span><br><span class="line">	<span class="keyword">END</span> <span class="keyword">AS</span> 实际工资 </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	employees</span><br><span class="line"><span class="keyword">WHERE</span> commission_pct <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> salary <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://cdn.baishew.com/hidove-images/2021/03/11/6049ad0974acd.jpg" alt="&#39;6049ad0974acd.jpg&#39;"></p>
+<h5 id="分组函数"><a href="#分组函数" class="headerlink" title="分组函数"></a>分组函数</h5><p>sum 求和<br>count 统计个数<br>3、分组查询<br>3.1 每个工种的最高工资<br>3.2 根据前一个筛选结果进行筛选<br>3.3 多字段分组<br>4、连接查询<br>4.1 等值连接<br>4.2 非等值连接<br>4.3 自连接<br>5、sql99<br>整体概述图<br>5.1 内连接<br>5.2 非等值连接<br>5.3 外连接<br>6、子查询<br>6.1 单查询<br>6.2 多行子查询<br>6.3 子表查询<br>6.4 exists查询<br>7、分页查询<br>7.1 查询前几页信息<br>7.2 查询第11条-25条<br>8、联合查询</p>
 
       
     </div>
@@ -1264,100 +1365,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/27/Hexo%E5%8D%9A%E5%AE%A2%E4%BB%A5%E5%8F%8A%E8%BF%81%E7%A7%BB%E5%88%B0Mac/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/aotang.jpg">
-      <meta itemprop="name" content="三鱼">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三鱼在熬汤">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/27/Hexo%E5%8D%9A%E5%AE%A2%E4%BB%A5%E5%8F%8A%E8%BF%81%E7%A7%BB%E5%88%B0Mac/" class="post-title-link" itemprop="url">Hexo博客以及迁移到Mac</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-08-27 13:51:44 / 修改时间：13:52:51" itemprop="dateCreated datePublished" datetime="2020-08-27T13:51:44+08:00">2020-08-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">日常学习</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>198</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>1、安装node.js和git</li>
-</ul>
-<p>下载地址：<a href="https://nodejs.org/en" target="_blank" rel="noopener">https://nodejs.org/en</a><br><img src="https://img-blog.csdnimg.cn/20200827135040574.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<ul>
-<li>2、安装Hexo框架</li>
-</ul>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install <span class="literal">-g</span> hexo<span class="literal">-cli</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20200827135029682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMjYxMzYy,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<ul>
-<li>3、终端进入自己文件夹下的路径，运用熟悉的命令行进行操作换主题：</li>
-</ul>
-<p>【注】手动或git克隆到themes中，更改_config.yml（操作时冒号后面有空格）中的theme<br>hexo clean 清除<br>hexo g 生成<br>hexo s 启动<br>hexo d 推到GitHub</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1428,7 +1435,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1477,12 +1484,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">32k</span>
+    <span title="站点总字数">34k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">29 分钟</span>
+    <span title="站点阅读时长">31 分钟</span>
 </div>
 
         
