@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="初始mysql数据库终端登录出现问题：【报错】ERROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘&#x2F;tmp&#x2F;mysql.sock’ (2) 123mysql --versionmysql -h 127.0.0.1 -u root -p  【报错】Can’t connect to MySQL server o">
+  <meta name="description" content="mysql数据库的基础复习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql数据库">
 <meta property="og:url" content="http://yoursite.com/2021/03/08/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
 <meta property="og:site_name" content="三鱼在熬汤">
-<meta property="og:description" content="初始mysql数据库终端登录出现问题：【报错】ERROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘&#x2F;tmp&#x2F;mysql.sock’ (2) 123mysql --versionmysql -h 127.0.0.1 -u root -p  【报错】Can’t connect to MySQL server o">
+<meta property="og:description" content="mysql数据库的基础复习">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://cdn.baishew.com/hidove-images/2021/03/05/6041efe750675.jpg">
 <meta property="og:image" content="http://cdn.baishew.com/hidove-images/2021/03/05/6041fae772009.jpg">
@@ -37,7 +37,7 @@
 <meta property="og:image" content="http://cdn.baishew.com/hidove-images/2021/03/09/6046d986d8cf2.jpg">
 <meta property="og:image" content="http://cdn.baishew.com/hidove-images/2021/03/11/6049ad0974acd.jpg">
 <meta property="article:published_time" content="2021-03-08T03:21:52.000Z">
-<meta property="article:modified_time" content="2021-03-18T03:20:38.459Z">
+<meta property="article:modified_time" content="2021-03-19T06:14:21.700Z">
 <meta property="article:author" content="三鱼">
 <meta property="article:tag" content="三鱼的博客">
 <meta name="twitter:card" content="summary">
@@ -213,7 +213,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-18 11:20:38" itemprop="dateModified" datetime="2021-03-18T11:20:38+08:00">2021-03-18</time>
+                <time title="修改时间：2021-03-19 14:14:21" itemprop="dateModified" datetime="2021-03-19T14:14:21+08:00">2021-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,7 +231,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.2k</span>
+              <span>4.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -250,7 +250,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h4 id="初始mysql数据库"><a href="#初始mysql数据库" class="headerlink" title="初始mysql数据库"></a>初始mysql数据库</h4><h5 id="终端登录出现问题："><a href="#终端登录出现问题：" class="headerlink" title="终端登录出现问题："></a>终端登录出现问题：</h5><p>【报错】ERROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘/tmp/mysql.sock’ (2)</p>
+        <p>mysql数据库的基础复习</p>
+<a id="more"></a>
+
+<h4 id="初始mysql数据库"><a href="#初始mysql数据库" class="headerlink" title="初始mysql数据库"></a>初始mysql数据库</h4><h5 id="终端登录出现问题："><a href="#终端登录出现问题：" class="headerlink" title="终端登录出现问题："></a>终端登录出现问题：</h5><p>【报错】ERROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘/tmp/mysql.sock’ (2)</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql --version</span><br><span class="line"></span><br><span class="line">mysql -h 127.0.0.1 -u root -p</span><br></pre></td></tr></table></figure>
 
 <p>【报错】Can’t connect to MySQL server on ‘127.0.0.1’ (61)</p>
@@ -459,7 +462,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
