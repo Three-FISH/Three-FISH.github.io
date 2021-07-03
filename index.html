@@ -168,6 +168,417 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aotang.jpg">
+      <meta itemprop="name" content="三鱼">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三鱼在熬汤">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">数据结构</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-30 17:20:27" itemprop="dateCreated datePublished" datetime="2021-06-30T17:20:27+08:00">2021-06-30</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>10k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h4 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h4><h5 id="线性表定义"><a href="#线性表定义" class="headerlink" title="线性表定义"></a>线性表定义</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单链表定义</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    ListNode *next;</span><br><span class="line">    ListNode() : val(<span class="number">0</span>), next(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    ListNode(<span class="keyword">int</span> x) : val(x), next(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    ListNode(<span class="keyword">int</span> x, ListNode *next) : val(x), next(next) &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="旋转数组"><a href="#旋转数组" class="headerlink" title="旋转数组"></a>旋转数组</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//给定一个数组，将数组中的元素向右移动 k 个位置  </span></span><br><span class="line"><span class="comment">//输入: nums = [1,2,3,4,5,6,7], k = 3</span></span><br><span class="line"><span class="comment">//输出: [5,6,7,1,2,3,4]</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="keyword">int</span> <span class="built_in">begin</span>, <span class="keyword">int</span> <span class="built_in">end</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="built_in">begin</span> &lt; <span class="built_in">end</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            swap(nums[<span class="built_in">begin</span>], nums[<span class="built_in">end</span>]);</span><br><span class="line">            <span class="built_in">begin</span> += <span class="number">1</span>;</span><br><span class="line">            <span class="built_in">end</span> -= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        k %= n;</span><br><span class="line">        reverse(nums, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">        reverse(nums, <span class="number">0</span>, k - <span class="number">1</span>);</span><br><span class="line">        reverse(nums, k, n - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//时间复杂度: O(n),n为数组长度</span></span><br><span class="line"><span class="comment">//空间复杂度: O(1)</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="主元素"><a href="#主元素" class="headerlink" title="主元素"></a>主元素</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个整数序列的主元素为出现次数超过序列元素个数一半的元素。</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">Majority</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">      <span class="keyword">int</span> temp, count = <span class="number">1</span>;</span><br><span class="line">      temp = A[<span class="number">0</span>];</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (A[i] == temp)</span><br><span class="line">          count++;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (count&gt;<span class="number">0</span>)</span><br><span class="line">          count--;</span><br><span class="line">        <span class="keyword">else</span>&#123;<span class="comment">//更换候选主元，重新计数</span></span><br><span class="line">          temp = A[i];</span><br><span class="line">          count = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (count&gt;<span class="number">0</span>)&#123;<span class="comment">//统计候选主元实际出现次数</span></span><br><span class="line">        count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">          <span class="keyword">if</span> (A[i] == temp)count++;</span><br><span class="line">          <span class="keyword">if</span> (count&gt;n / <span class="number">2</span>)<span class="keyword">return</span> temp;<span class="comment">//满足主元定义，可直接返回主元，算法结束</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//时间复杂度: O(n),n为数组长度</span></span><br><span class="line"><span class="comment">//空间复杂度: O(1)</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="最小整数"><a href="#最小整数" class="headerlink" title="最小整数"></a>最小整数</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//找出数组&#123;-5，3，2，3&#125;从未出现的最小整数 1 </span></span><br><span class="line"><span class="comment">//时间复杂度尽可能低</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minNumberdisappered</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len=arr.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i]&gt;<span class="number">0</span>&amp;&amp;arr[i]&lt;len)swap(arr[i],arr[arr[i]<span class="number">-1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i]!=i+<span class="number">1</span>)<span class="keyword">return</span> i+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> len+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//时间复杂度：O(n),n为数组长度</span></span><br><span class="line"><span class="comment">//空间复杂度：O(1)</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="最小三元组距离"><a href="#最小三元组距离" class="headerlink" title="最小三元组距离"></a>最小三元组距离</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//已知三个升序整数数组a[i], b[m]和c[n]。请在三个数组中各找一个元素，使得组成的三元组距离最小。</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INT_MAX 0x7FFFFFFF</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">findMinDistance</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr1,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr2,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr3)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>,k=<span class="number">0</span>,<span class="built_in">min</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> minDis = INT_MAX;</span><br><span class="line">    <span class="keyword">int</span> curDis;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;arr1.<span class="built_in">size</span>()&amp;&amp;j&lt;arr2.<span class="built_in">size</span>()&amp;&amp;k&lt;arr3.<span class="built_in">size</span>())&#123;</span><br><span class="line">      curDis = abs_(arr1[i]-arr2[j])+abs_(arr2[j]-arr3[k])+abs_(arr1[i]-arr3[k]);</span><br><span class="line">      <span class="keyword">if</span>(curDis&lt;minDis)&#123;</span><br><span class="line">        minDis = curDis;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">min</span> = min_(arr1[i],arr2[j],arr[k]);</span><br><span class="line">      <span class="keyword">if</span>(<span class="built_in">min</span> == arr1[i])&#123;</span><br><span class="line">        i++;</span><br><span class="line">      &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">min</span> == arr2[j])&#123;</span><br><span class="line">        j++;</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        k++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> minDis;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">abs_</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(a&lt;<span class="number">0</span>) <span class="keyword">return</span> -a;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> a;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">min_</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a&lt;b &amp;&amp; a&lt;c)&#123;</span><br><span class="line">      <span class="keyword">return</span> a;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(&lt;a &amp;&amp; b&lt;c)&#123;</span><br><span class="line">      <span class="keyword">return</span> b;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//时间复杂度：O(n),n为三数组长度之和</span></span><br><span class="line"><span class="comment">//空间复杂度：O(1)</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="删除链表倒数第N个结点"><a href="#删除链表倒数第N个结点" class="headerlink" title="删除链表倒数第N个结点"></a>删除链表倒数第N个结点</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeNthFromEnd</span><span class="params">(ListNode* head, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        ListNode* dummyHead = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        dummyHead-&gt;next = head;</span><br><span class="line">        ListNode* slow = dummyHead;</span><br><span class="line">        ListNode* fast = dummyHead;</span><br><span class="line">        <span class="keyword">while</span>(n-- &amp;&amp; fast != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            fast = fast-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        fast = fast-&gt;next; <span class="comment">// fast再提前走一步，因为需要让slow指向删除节点的上一个节点</span></span><br><span class="line">        <span class="keyword">while</span> (fast != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            fast = fast-&gt;next;</span><br><span class="line">            slow = slow-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        slow-&gt;next = slow-&gt;next-&gt;next;</span><br><span class="line">        <span class="keyword">return</span> dummyHead-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//时间复杂度：O(L)，其中 L 是链表的长度</span></span><br><span class="line"><span class="comment">//空间复杂度：O(1)</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="公共后缀"><a href="#公共后缀" class="headerlink" title="公共后缀"></a>公共后缀</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  	<span class="function">ListNode* <span class="title">getIntersectionNode</span><span class="params">(ListNode *headA,ListNode *headB)</span></span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(!headA||!headB)&#123;</span><br><span class="line">        <span class="keyword">return</span> headA ? headA : headB;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span>(headA == headB)&#123;</span><br><span class="line">        <span class="keyword">return</span> headA;</span><br><span class="line">      &#125;</span><br><span class="line">      ListNode *preA = headA;</span><br><span class="line">      ListNode *preB = headB;</span><br><span class="line">      <span class="keyword">int</span> len1 = <span class="number">0</span>,len2 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(preA)&#123;</span><br><span class="line">            len1++;</span><br><span class="line">            preA = preA-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(preB)&#123;</span><br><span class="line">            len2++;</span><br><span class="line">            preB = preB-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> temp = abs_(len2-len1);</span><br><span class="line">        <span class="keyword">if</span>(len1&lt;len2)&#123;</span><br><span class="line">            <span class="keyword">while</span>(temp)&#123;</span><br><span class="line">                headB = headB-&gt;next;</span><br><span class="line">                temp--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">while</span>(temp)&#123;</span><br><span class="line">                headA = headA-&gt;next;</span><br><span class="line">                temp--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(headA&amp;&amp;headB)&#123;</span><br><span class="line">            <span class="keyword">if</span>(headA== headB)&#123;</span><br><span class="line">                <span class="keyword">return</span> headA;</span><br><span class="line">            &#125;</span><br><span class="line">            headA = headA-&gt;next;</span><br><span class="line">            headB = headB-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//时间复杂度 O(a + b)</span></span><br><span class="line"><span class="comment">//空间复杂度 O(1)</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="移除重复结点"><a href="#移除重复结点" class="headerlink" title="移除重复结点"></a>移除重复结点</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		    <span class="function">ListNode* <span class="title">removeDuplicateNodes</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//第一个节点不会删除</span></span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="keyword">int</span>&gt; <span class="built_in">set</span>;</span><br><span class="line">        <span class="built_in">set</span>.insert(head-&gt;val);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//从第二个节点开始删除</span></span><br><span class="line">        ListNode* prev = head;</span><br><span class="line">        <span class="keyword">while</span> (prev-&gt;next)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">set</span>.<span class="built_in">find</span>(prev-&gt;next-&gt;val) != <span class="built_in">set</span>.<span class="built_in">end</span>()) <span class="comment">//值重复</span></span><br><span class="line">            &#123;</span><br><span class="line">                prev-&gt;next = prev-&gt;next-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="comment">//值首次出现</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">set</span>.insert(prev-&gt;next-&gt;val);</span><br><span class="line">                prev = prev-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//时间复杂度 O(n)</span></span><br><span class="line"><span class="comment">//空间复杂度 O(n)</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="链表重排"><a href="#链表重排" class="headerlink" title="链表重排"></a>链表重排</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//&#123;a1,a2,a3...an-1,an&#125;=&gt;&#123;a1,an,a2...&#125;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  	<span class="function"><span class="keyword">void</span> <span class="title">reorderList</span><span class="params">(ListNode* head)</span></span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(!head || !head-&gt;next)&#123;</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode* fast = head;</span><br><span class="line">        ListNode* slow = head;</span><br><span class="line">        ListNode* mid = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">while</span>(fast-&gt;next &amp;&amp; fast-&gt;next-&gt;next)&#123;</span><br><span class="line">            fast = fast-&gt;next-&gt;next;</span><br><span class="line">            slow = slow-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        mid = slow-&gt;next;</span><br><span class="line">        slow-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">        mid = reverseList(mid);</span><br><span class="line">        ListNode *cur = head;</span><br><span class="line">     	  <span class="keyword">while</span>(cur&amp;&amp;mid)&#123;</span><br><span class="line">            ListNode *temp = mid;</span><br><span class="line">            mid = mid-&gt;next;</span><br><span class="line">            temp-&gt;next = cur-&gt;next;</span><br><span class="line">            cur-&gt;next = temp;</span><br><span class="line">            cur = temp-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode *head)</span></span>&#123;</span><br><span class="line">    ListNode *hair = <span class="keyword">new</span> ListNode(<span class="number">-1</span>);</span><br><span class="line">    hair-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    ListNode *pre = hair;</span><br><span class="line">    <span class="keyword">while</span>(head)&#123;</span><br><span class="line">      ListNode* next = head-&gt;next;</span><br><span class="line">      head-&gt;next = pre-&gt;next;</span><br><span class="line">      pre-&gt;next= head;</span><br><span class="line">      head = next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> hair-&gt;next;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//时间复杂度O(n)</span></span><br><span class="line"><span class="comment">//空间复杂度O(n)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="栈和队列"><a href="#栈和队列" class="headerlink" title="栈和队列"></a>栈和队列</h4><h5 id="栈序列合法性"><a href="#栈序列合法性" class="headerlink" title="栈序列合法性"></a>栈序列合法性</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//给定 pushed-进栈顺序 和 popped-给定的出栈顺序 两个序列，每个序列中的值都不重复，判断给出的出栈序列是否合法。</span></span><br><span class="line"><span class="comment">//示例 1：输入：pushed = [1,2,3,4,5], popped = [4,5,3,2,1]</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">validateStackSequences</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; pushed, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; popped)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; stk;</span><br><span class="line">        <span class="keyword">int</span> n = pushed.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            stk.push(pushed[i]);</span><br><span class="line">             <span class="keyword">while</span>(!stk.empty()&amp;&amp;j&lt;n&amp;&amp;stk.top()==popped[j]) stk.pop(),j++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stk.empty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//给定一个长度为N的整数数列，输出每个数左边第一个比它小的数，如果不存在则输出-1。</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">solution</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums)</span></span>&#123;</span><br><span class="line">  <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; stk;</span><br><span class="line">  <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;res;</span><br><span class="line">  <span class="keyword">int</span> i = nums.<span class="built_in">size</span>();</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(stk.empty())&#123;</span><br><span class="line">      res.push(<span class="number">-1</span>);</span><br><span class="line">      stk.push(nums[i]);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">int</span> numtop = stk.top();</span><br><span class="line">          <span class="keyword">while</span>(numtop&gt;nums[i])&#123;</span><br><span class="line">            stk.pop();</span><br><span class="line">            <span class="keyword">if</span>(stk.empty())&#123;</span><br><span class="line">              stk.push(nums[i]);</span><br><span class="line">              res.push(<span class="number">-1</span>);</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            numtop = stk.top();</span><br><span class="line">          &#125;</span><br><span class="line">        <span class="keyword">if</span>(!stk.empty())&#123;</span><br><span class="line">          res.push(numtop);</span><br><span class="line">          stk.push(nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="逆波兰表达式求值"><a href="#逆波兰表达式求值" class="headerlink" title="逆波兰表达式求值"></a>逆波兰表达式求值</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据逆波兰表示法，求表达式的值。</span></span><br><span class="line"><span class="comment">//有效的运算符包括 +, -, *, / 。每个运算对象可以是整数，也可以是另一个逆波兰表达式。</span></span><br><span class="line"><span class="comment">//输入: ["10", "6", "9", "3", "+", "-11", "", "/", "", "17", "+", "5", "+"]</span></span><br><span class="line"><span class="comment">//输出: 22</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">evalRPN</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; tokens)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;tokens.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(tokens[i] == <span class="string">"+"</span> ||tokens[i] == <span class="string">"-"</span> ||tokens[i] == <span class="string">"*"</span> ||tokens[i] == <span class="string">"/"</span> )&#123;</span><br><span class="line">                <span class="keyword">int</span> num1 = st.top();</span><br><span class="line">                st.pop();</span><br><span class="line">                <span class="keyword">int</span> num2 = st.top();</span><br><span class="line">                st.pop();</span><br><span class="line">                <span class="keyword">if</span>(tokens[i] == <span class="string">"+"</span> ) st.push(num2 + num1);</span><br><span class="line">                <span class="keyword">if</span>(tokens[i] == <span class="string">"-"</span> ) st.push(num2 - num1);</span><br><span class="line">                <span class="keyword">if</span>(tokens[i] == <span class="string">"*"</span> ) st.push(num2 * num1);</span><br><span class="line">                <span class="keyword">if</span>(tokens[i] == <span class="string">"/"</span> ) st.push(num2 / num1);</span><br><span class="line">             &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                 st.push(getv(tokens[i]));</span><br><span class="line">             &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> st.top();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getv</span><span class="params">(<span class="built_in">string</span> &amp;s)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(s[<span class="number">0</span>]==<span class="string">'-'</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; s.<span class="built_in">size</span>(); i++) ans = ans*<span class="number">10</span>+s[i]-<span class="string">'0'</span>;</span><br><span class="line">            <span class="keyword">return</span> -ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> v:s) ans = ans*<span class="number">10</span>+v-<span class="string">'0'</span>;</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="中缀表达式转为后缀表达式"><a href="#中缀表达式转为后缀表达式" class="headerlink" title="中缀表达式转为后缀表达式"></a>中缀表达式转为后缀表达式</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  	<span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; <span class="title">result</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; express)</span></span>&#123;</span><br><span class="line">      <span class="built_in">vector</span> res;</span><br><span class="line">      <span class="built_in">map</span>&lt;<span class="keyword">char</span>,<span class="keyword">int</span>&gt; star;</span><br><span class="line">      star[<span class="string">'+'</span>] = <span class="number">1</span>;</span><br><span class="line">      star[<span class="string">'-'</span>] = <span class="number">1</span>;</span><br><span class="line">      star[<span class="string">'*'</span>] = <span class="number">2</span>;</span><br><span class="line">      star[<span class="string">'/'</span>] = <span class="number">2</span>;</span><br><span class="line">      <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; st;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;express.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">isalpha</span>(express[i]))&#123;</span><br><span class="line">          res.push_back(express[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(express[i] == <span class="string">'('</span>)&#123;</span><br><span class="line">          st.push(express[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(express[i] ==<span class="string">')'</span>)&#123;</span><br><span class="line">          <span class="keyword">while</span>(st.top!=<span class="string">'('</span>)&#123;</span><br><span class="line">            res.push_back(st.top());</span><br><span class="line">            st.pop();</span><br><span class="line">          &#125;</span><br><span class="line">          st.pop();</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          <span class="comment">// 当前栈顶的元素优先级大于当前当前字符</span></span><br><span class="line">          <span class="keyword">while</span>(!st.empty()&amp;&amp;star[st.top()]&gt;=star[express[i]])&#123;</span><br><span class="line">            res.push_back(st.top());</span><br><span class="line">            st.pop();</span><br><span class="line">          &#125;</span><br><span class="line">          st.push(express[i]);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">while</span>(!st.empty())&#123;</span><br><span class="line">        res.push_back(st.top());</span><br><span class="line">        st.pop();</span><br><span class="line">      &#125;</span><br><span class="line">      rerturn res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="树和二叉树"><a href="#树和二叉树" class="headerlink" title="树和二叉树"></a>树和二叉树</h4><h5 id="二叉树结构"><a href="#二叉树结构" class="headerlink" title="二叉树结构"></a>二叉树结构</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> &#123;</span></span><br><span class="line">     <span class="keyword">int</span> val;</span><br><span class="line">     TreeNode *left;</span><br><span class="line">     TreeNode *right;</span><br><span class="line">     TreeNode() : val(<span class="number">0</span>), left(<span class="literal">nullptr</span>), right(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">     TreeNode(<span class="keyword">int</span> x) : val(x), left(<span class="literal">nullptr</span>), right(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">     TreeNode(<span class="keyword">int</span> x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span><br><span class="line">     &#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="二叉树前序遍历"><a href="#二叉树前序遍历" class="headerlink" title="二叉树前序遍历"></a>二叉树前序遍历</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//非递归遍历</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;TreeNode*&gt; st;</span><br><span class="line">        TreeNode* cur = root;</span><br><span class="line">        <span class="keyword">if</span>(cur == <span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        st.push(cur);</span><br><span class="line">        <span class="keyword">while</span>(!st.empty())&#123;</span><br><span class="line">            TreeNode* temp = st.top();</span><br><span class="line">            st.pop();</span><br><span class="line">            res.push_back(temp-&gt;val);</span><br><span class="line">            <span class="keyword">if</span>(temp-&gt;right!= <span class="literal">NULL</span>) st.push(temp-&gt;right);</span><br><span class="line">            <span class="keyword">if</span>(temp-&gt;left!= <span class="literal">NULL</span>) st.push(temp-&gt;left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//递归遍历</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> res;</span><br><span class="line">      	res.push_back(root-&gt;val);</span><br><span class="line">        preorderTraversal(root-&gt;left); </span><br><span class="line">        preorderTraversal(root-&gt;right);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="二叉树中序遍历"><a href="#二叉树中序遍历" class="headerlink" title="二叉树中序遍历"></a>二叉树中序遍历</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//非递归遍历</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;TreeNode*&gt; st;</span><br><span class="line">        TreeNode* cur = root;</span><br><span class="line">        <span class="keyword">if</span>(cur == <span class="literal">NULL</span>) <span class="keyword">return</span> res;</span><br><span class="line">        <span class="keyword">while</span>(cur != <span class="literal">NULL</span> || !st.empty())&#123;</span><br><span class="line">            <span class="keyword">if</span>(cur != <span class="literal">NULL</span>)&#123;</span><br><span class="line">                st.push(cur);</span><br><span class="line">                cur = cur-&gt;left;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                cur = st.top();</span><br><span class="line">                st.pop();</span><br><span class="line">                res.push_back(cur-&gt;val);</span><br><span class="line">                cur = cur-&gt;right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//递归遍历</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> res;</span><br><span class="line">        inorderTraversal(root-&gt;left);</span><br><span class="line">        res.push_back(root-&gt;val);</span><br><span class="line">        inorderTraversal(root-&gt;right);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="二叉树后序遍历"><a href="#二叉树后序遍历" class="headerlink" title="二叉树后序遍历"></a>二叉树后序遍历</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//非递归遍历</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;TreeNode*&gt; st;</span><br><span class="line">        <span class="built_in">stack</span>&lt;TreeNode*&gt; num;</span><br><span class="line">        TreeNode* cur = root;</span><br><span class="line">        <span class="keyword">if</span>(cur == <span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        st.push(cur);</span><br><span class="line">        <span class="keyword">while</span>(!st.empty())&#123;</span><br><span class="line">            TreeNode* temp = st.top();</span><br><span class="line">            st.pop();</span><br><span class="line">            num.push(temp);</span><br><span class="line">            <span class="keyword">if</span>(temp-&gt;left) st.push(temp-&gt;left);</span><br><span class="line">            <span class="keyword">if</span>(temp-&gt;right) st.push(temp-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!num.empty())&#123;</span><br><span class="line">            TreeNode* p = num.top();</span><br><span class="line">            num.pop();</span><br><span class="line">            res.push_back(p-&gt;val);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//递归遍历</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> res;</span><br><span class="line">        postorderTraversal(root-&gt;left);</span><br><span class="line">        postorderTraversal(root-&gt;right);</span><br><span class="line">   		  res.push_back(root-&gt;val);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/08/electron/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aotang.jpg">
+      <meta itemprop="name" content="三鱼">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三鱼在熬汤">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/08/electron/" class="post-title-link" itemprop="url">electron</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-08 15:32:17" itemprop="dateCreated datePublished" datetime="2021-06-08T15:32:17+08:00">2021-06-08</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>339</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h5 id="安装及开发环境的搭建"><a href="#安装及开发环境的搭建" class="headerlink" title="安装及开发环境的搭建"></a>安装及开发环境的搭建</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line"></span><br><span class="line">npm -v</span><br><span class="line"></span><br><span class="line">npm init</span><br><span class="line"></span><br><span class="line">npm install electron --save-dev  //安装在项目中</span><br><span class="line"></span><br><span class="line">npm install -g electron //终端中执行安装到全局</span><br><span class="line"></span><br><span class="line">npx electron -v</span><br><span class="line"></span><br><span class="line">./node_modules/.bin/electron</span><br><span class="line"></span><br><span class="line">npm config edit   //出现问题查看node配置</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/04/21/uoIfiFw6cAQv4Sn.png" alt="Snipaste_2021-04-21_09-40-19"></p>
+<h5 id="快速启动"><a href="#快速启动" class="headerlink" title="快速启动"></a>快速启动</h5><p><a href="https://github.com/electron/electron-quick-start" target="_blank" rel="noopener">https://github.com/electron/electron-quick-start</a></p>
+<h5 id="配置ESlint-检查工具"><a href="#配置ESlint-检查工具" class="headerlink" title="配置ESlint 检查工具"></a>配置ESlint 检查工具</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mac-mini ~ % npm install -g eslint</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/tools/Snipaste_2021-06-07_14-19-14.77ooie7bobk0.png" alt="Snipaste_2021-06-07_14-19-14"></p>
+<h5 id="使用node-js-及node-js第三方模块"><a href="#使用node-js-及node-js第三方模块" class="headerlink" title="使用node js 及node js第三方模块"></a>使用node js 及node js第三方模块</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install md5 --save</span><br></pre></td></tr></table></figure>
+
+<p>–save保存到dependencies中</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aotang.jpg">
+      <meta itemprop="name" content="三鱼">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三鱼在熬汤">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">计算机组成原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-21 15:36:55" itemprop="dateCreated datePublished" datetime="2021-05-21T15:36:55+08:00">2021-05-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-03 14:36:40" itemprop="dateModified" datetime="2021-07-03T14:36:40+08:00">2021-07-03</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h3><h5 id="第一章-计算机系统概述"><a href="#第一章-计算机系统概述" class="headerlink" title="第一章 计算机系统概述"></a>第一章 计算机系统概述</h5><h6 id="1-1"><a href="#1-1" class="headerlink" title="1.1"></a>1.1</h6><p><img src="https://i.loli.net/2021/04/13/2rokvUydMi43ZtK.png" alt="Snipaste_2021-04-13_17-22-47"></p>
+<h6 id="1-2"><a href="#1-2" class="headerlink" title="1.2"></a>1.2</h6><p><img src="https://i.loli.net/2021/04/15/JfYi6uZt3VcrvjT.png" alt="Snipaste_2021-04-15_16-38-23"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">主存储单元由若干存储元组成，每个存储元存储一个二进制代码0或1，一个存储单元可存储一串二进制代码，称这串代码为存储字，称这串代码的位数为存储字长。</span><br><span class="line">单指令流和单指令流系统（SISD）即传统冯·诺依曼体系结构；</span><br><span class="line">冯·诺依曼机最根本的特征是采用“存储程序”原理，基本工作方式是以控制流驱动方式；</span><br><span class="line">早期的冯·诺依曼机是以运算器为中心，且是单处理机。</span><br><span class="line">冯·诺依曼结构计算机指令按地址访问，数据由指令的地址码指出，除立即寻址外，数据均存放在存储器内；指令和数据以同等的地位存放在存储器中，形式上无差别，只是在执行时具有不同的含义；</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/04/15/dzsRaCJIKbxc8O5.png" alt="Snipaste_2021-04-15_20-33-44"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">累加器（ACC）、乘商寄存器（MQ）、操作数寄存器（X）是寄存器必备的；</span><br><span class="line">CPU和主存储器共同组成主机，一般将运算器和控制器集成到同一芯片上，称为中央处理器；</span><br><span class="line">地址寄存器（MAR）存放访存地址，因此位数与地址码长度相同，数据寄存器（MDR）用于暂存要从存储器中读或写的信息，因此位数与存储字长相同；</span><br><span class="line">寄存器在CPU内部，速度最快，寄存器&gt;cache&gt;内存；</span><br><span class="line">8位计算机（机器字长）表示计算机字长为8位，即一次可处理8位的数据，以16位表示地址，即表示地址码的长度，地址空间；</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gri56cgkx9j31eg0pqb29.jpg" alt="Snipaste_2021-06-14_21-59-55"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-04-25_16-47-23.61py43jyhqo0.png" alt="Snipaste_2021-04-25_16-47-23"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">第3～5层称为虚拟机，简单来说就是软件实现的机器；</span><br><span class="line">层次之间关系紧密，下层是上层的基础，上层是下层的扩展；</span><br><span class="line">本门课程主要讨论传统机器M1和微程序机器M0的组成原理及设计思想；</span><br><span class="line">解释性语言要边翻译成机器语言边执行，因此一般速度较编译程序慢；</span><br><span class="line">软件和硬件在逻辑上是等效的（并非等价的）；</span><br><span class="line">寄存器的设置对汇编语言并不透明，汇编程序猿要对寄存器进行操作；</span><br><span class="line">向后兼容指时间向后兼容，即新机器兼容以前机器的指令系统；</span><br><span class="line">相联寄存器既可以按地址寻址也可以按内容寻址，只是为了与传统区分称为按内容寻址的寄存器；</span><br></pre></td></tr></table></figure>
+
+<h6 id="1-3"><a href="#1-3" class="headerlink" title="1.3"></a>1.3</h6><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-12_11-28-30.2vivmk4s7sm0.png" alt="Snipaste_2021-05-12_11-28-30"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">CPU的性能（CPU执行的时间）取决于三要素：主频、CPI、指令条数；</span><br><span class="line">MIPS:每秒执行多少百万条指令；（40MHZ:每秒包含40M个时钟周期）；</span><br><span class="line">1/CPI:平均指令周期；</span><br><span class="line">MFLOPS每秒执行多少百万次浮点运算，该参数用来描述计算机的浮点运算性能，而用于科学计算的计算机主要评估浮点运算的性能；</span><br><span class="line">M、G、T：百万、十亿、万亿；</span><br><span class="line">数据通路的功能是实现CPU内部的运算器和寄存器及寄存器之间的数据交换，优化数据通路结构，可以有效提高计算机系统的吞吐量；</span><br><span class="line">汇编程序猿可以通过指定代执指令的地址设置PC的值；状态寄存器、通用寄存器只有对汇编程序猿可见才能实现编程，而IR、MAR、MDR是CPU内部工作寄存器，对程序猿均不可见；</span><br><span class="line">吞吐量指系统在单位时间内处理请求的数量，是评估价计算机性能的综合指标；</span><br><span class="line">计算机“运算速度”指标的含义是每秒能执行多少条指令；</span><br><span class="line">时间减少为原来的一半,速度提高50%： *1.5；</span><br></pre></td></tr></table></figure>
+
+<h5 id="第二章-数据的表示和运算"><a href="#第二章-数据的表示和运算" class="headerlink" title="第二章 数据的表示和运算"></a>第二章 数据的表示和运算</h5><h6 id="2-1"><a href="#2-1" class="headerlink" title="2.1"></a>2.1</h6><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-17_13-49-29.2n2180oly4q0.png" alt="Snipaste_2021-05-17_13-49-29"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-17_14-15-56.5m1y1roy78o0.png" alt="Snipaste_2021-05-17_14-15-56"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-17_14-46-58.6j9shbgh8e00.png" alt="Snipaste_2021-05-17_14-46-58"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">国际通用的ASCII码由7位二进制代码表示；编码的顺序由小到大依次为：控制符号、数字符、大写英文字母、小写英文字母；</span><br><span class="line">由于字节是计算机存储的基本单元，ASCII码仍以1字节存入一个ASCII字符，只是每个字节中多余的一位即最高位（最左边一位）在机内部保持为"0";</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-17_15-20-28.5gqq8euu1q40.png" alt="Snipaste_2021-05-17_15-20-28"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">对于码距不小于2的数据校验吗，开始具有检错的能力；码距越大，检错、纠错的能力就越强，检错能力总是的大于纠错能力；</span><br><span class="line">用一位奇偶校验码能检测出1位内存错误的百分比为100%；</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-18_14-19-16.2fcrc3bc3hwk.png" alt="Snipaste_2021-05-18_14-19-16"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-18_19-31-08.2gj9htfjyzb.png" alt="Snipaste_2021-05-18_19-31-08"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gror0r9bn0j327u0t2hdt.jpg" alt="Snipaste_2021-06-20_15-08-58"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在CRC码中，接收端检测出某一位数据错误后，纠正的方法有：请求重发、删除数据、通过余数自行矫正；</span><br><span class="line">CRC通常用于计算机网络的数据链路层，适合大量数据的数据校验；</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-18_20-27-56.4d2er6viov60.png" alt="Snipaste_2021-05-18_20-27-56"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-18_20-29-43.30yq1k8rld00.png" alt="Snipaste_2021-05-18_20-29-43"></p>
+<h6 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h6><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-19_19-30-21.1ogk9cz00ncw.png" alt="Snipaste_2021-05-19_19-30-21"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-20_16-02-05.ohuy0wz99u8.png" alt="Snipaste_2021-05-20_16-02-05"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-20_16-27-51.5qagsnktafg0.png" alt="Snipaste_2021-05-20_16-27-51"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-20_16-57-37.2lda51xrnxy0.png" alt="Snipaste_2021-05-20_16-57-37"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-21_10-35-38.2k1q1qlkdbe0.png" alt="Snipaste_2021-05-21_10-35-38"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-21_10-55-40.fp03516p3mg.png" alt="Snipaste_2021-05-21_10-55-40"></p>
+<p> <img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-21_11-35-41.2s7jg1csj8k0.png" alt="Snipaste_2021-05-21_11-35-41"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-21_11-36-26.1r1m073u76hs.png" alt="Snipaste_2021-05-21_11-36-26"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-21_15-14-27.3s3af3cqxfa0.png" alt="Snipaste_2021-05-21_15-14-27"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-21_15-19-55.4uf9g4itcra0.png" alt="Snipaste_2021-05-21_15-19-55"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-21_15-34-34.2yxd8lloo9w0.png" alt="Snipaste_2021-05-21_15-34-34"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-21_15-36-43.1mbd7mrlcl1c.png" alt="Snipaste_2021-05-21_15-36-43"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1).大端存储：大端模式，是指数据的高字节保存在内存的低地址中，而数据的低字节保存在内存的高地址中，这样的存储模式有点儿类似于把数据当作字符串顺序处理：地址由小向大增加，而数据从高位往低位放。</span><br><span class="line"></span><br><span class="line">2).小端存储：小端模式，是指数据的高字节保存在内存的高地址中，而数据的低字节保存在内存的低地址中，这种存储模式将地址的高低和数据位权有效地结合起来，高地址部分权值高，低地址部分权值低，和我们的逻辑方法一致。</span><br><span class="line"></span><br><span class="line">如果将一个32位的整数**0x12345678**存放到一个整型变量（int）中，这个整型变量采用大端或者小端模式在内存中的存储由下表所示。</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-25_18-58-26.5e4lhvt58sc0.png" alt="Snipaste_2021-05-25_18-58-26"></p>
+<h6 id="2-3"><a href="#2-3" class="headerlink" title="2.3"></a>2.3</h6><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-26_14-38-19.4p92eunb63k0.png" alt="Snipaste_2021-05-26_14-38-19"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-26_16-36-50.23eypagq4y74.png" alt="Snipaste_2021-05-26_16-36-50"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-27_11-06-28.7gh8qfv6hs80.png" alt="Snipaste_2021-05-27_11-06-28"></p>
+<h6 id="2-4"><a href="#2-4" class="headerlink" title="2.4"></a>2.4</h6><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-27_13-46-18.2p1prmws7ci0.png" alt="Snipaste_2021-05-27_13-46-18"></p>
+<h5 id="第三章-存储系统"><a href="#第三章-存储系统" class="headerlink" title="第三章 存储系统"></a>第三章 存储系统</h5><h6 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h6><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-31_14-03-51.2d0km41ys2qs.png" alt="Snipaste_2021-05-31_14-03-51"></p>
+<h6 id="3-2"><a href="#3-2" class="headerlink" title="3.2"></a>3.2</h6><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-31_16-09-37.5wff41p7hbs0.png" alt="Snipaste_2021-05-31_16-09-37"></p>
+<h6 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h6><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-05-31_16-27-09.1vb476n14cw0.png" alt="Snipaste_2021-05-31_16-27-09"></p>
+<p>DRAM“刷新”由存储器独立完成，不需要CPU控制</p>
+<p>DRAM分两次送列地址导致地址线引脚减半</p>
+<p>现在的主存通常使用SDRAM芯片</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-01_10-54-30.6smxjqw9ypc0.png" alt="Snipaste_2021-06-01_10-54-30"></p>
+<h6 id="3-4"><a href="#3-4" class="headerlink" title="3.4"></a>3.4</h6><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-01_11-29-23.366ovtpra920.png" alt="Snipaste_2021-06-01_11-29-23"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-01_11-37-18.2474hkk13ie8.png" alt="Snipaste_2021-06-01_11-37-18"></p>
+<h6 id="3-5"><a href="#3-5" class="headerlink" title="3.5"></a>3.5</h6><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-02_19-11-32.27a28edhfot.png" alt="Snipaste_2021-06-02_19-11-32"></p>
+<h6 id="3-6"><a href="#3-6" class="headerlink" title="3.6"></a>3.6</h6><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-03_15-58-53.2gx9zvjuvvi0.png" alt="Snipaste_2021-06-03_15-58-53"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-03_17-11-04.2r1legwb72q0.png" alt="Snipaste_2021-06-03_17-11-04"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-04_14-30-32.6m43fga0qso0.png" alt="Snipaste_2021-06-04_14-30-32"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-04_15-03-55.4k77ce542x60.png" alt="Snipaste_2021-06-04_15-03-55"></p>
+<h6 id="3-7"><a href="#3-7" class="headerlink" title="3.7"></a>3.7</h6><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-04_15-55-36.50modr6gfr40.png" alt="Snipaste_2021-06-04_15-55-36"></p>
+<h5 id="第四章-指令系统"><a href="#第四章-指令系统" class="headerlink" title="第四章 指令系统"></a>第四章 指令系统</h5><h6 id="4-1"><a href="#4-1" class="headerlink" title="4.1"></a>4.1</h6><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-09_11-21-58.1zqtpk4d7abk.png" alt="Snipaste_2021-06-09_11-21-58"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">机器字长：CPU进行一次整数运算所能处理的二进制数据的位数（通常与ALU直接相关）指令字长：一条指令的总长度（可能会变）存储字长：一个存储单元中的二进制代码位数（通常与MDR位数相同）【指令长度是机器字长的多少倍数，半字长指令/单字长指令/双字长指令】【指令字长会影响取指令所需的事件，如：机器字长=存储字长= 16bit，则取一条双字长指令需要两次访存】机器字长、指令字长、存储字长、三者在数值上可以相等也可以不等，视不同的机器而定；数据字长是数据总线一次能并行传送信息的位数，可以不等于MDR的位数；</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-09_11-38-03.2x2eu9h4dmk0.png" alt="Snipaste_2021-06-09_11-38-03"></p>
+<h6 id="4-2"><a href="#4-2" class="headerlink" title="4.2"></a>4.2</h6><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-09_16-05-12.585jv2wqr9w0.png" alt="Snipaste_2021-06-09_16-05-12"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-09_16-07-13.7bwwmg8kyag0.png" alt="Snipaste_2021-06-09_16-07-13"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-10_10-25-34.6h81hy6xtl80.png" alt="Snipaste_2021-06-10_10-25-34"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-10_16-46-01.1aisg5b1qzts.png" alt="Snipaste_2021-06-10_16-46-01"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-11_10-04-50.jkixm8x5txs.png" alt="Snipaste_2021-06-11_10-04-50"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/Snipaste_2021-06-10_10-56-05.2x3775al08u0.png" alt="Snipaste_2021-06-10_10-56-05"></p>
+<h5 id="第五章-中央处理器"><a href="#第五章-中央处理器" class="headerlink" title="第五章 中央处理器"></a>第五章 中央处理器</h5><p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/5-1%EF%BC%881%EF%BC%89.pl5a6q1xk8g.png" alt="5-1（1）"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/5-1%EF%BC%882%EF%BC%89.13mgpd92tcxs.png" alt="5-1（2）"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Three-FISH/image-hosting@master/typora/5-1%EF%BC%883%EF%BC%89.44wvzr44y5o0.png" alt="5-1（3）"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/19/%E9%AB%98%E7%BA%A7%E7%AF%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aotang.jpg">
+      <meta itemprop="name" content="三鱼">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三鱼在熬汤">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/19/%E9%AB%98%E7%BA%A7%E7%AF%87/" class="post-title-link" itemprop="url">高级篇</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-04-19 17:20:49" itemprop="dateCreated datePublished" datetime="2021-04-19T17:20:49+08:00">2021-04-19</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>61</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="Java编程"><a href="#Java编程" class="headerlink" title="Java编程"></a>Java编程</h4><h4 id="Groovy与gradle"><a href="#Groovy与gradle" class="headerlink" title="Groovy与gradle"></a>Groovy与gradle</h4><h4 id="Android原生相关"><a href="#Android原生相关" class="headerlink" title="Android原生相关"></a>Android原生相关</h4><h4 id="Objective-c编程"><a href="#Objective-c编程" class="headerlink" title="Objective-c编程"></a>Objective-c编程</h4><h4 id="ios开发相关"><a href="#ios开发相关" class="headerlink" title="ios开发相关"></a>ios开发相关</h4><h4 id="Flutter插件开发"><a href="#Flutter插件开发" class="headerlink" title="Flutter插件开发"></a>Flutter插件开发</h4>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/18/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8E%E7%9A%84%E7%94%9F%E6%B4%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -687,480 +1098,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/15/mac-ios%E6%A8%A1%E6%8B%9F%E5%99%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/aotang.jpg">
-      <meta itemprop="name" content="三鱼">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三鱼在熬汤">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/15/mac-ios%E6%A8%A1%E6%8B%9F%E5%99%A8/" class="post-title-link" itemprop="url">mac-ios模拟器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-01-15 14:27:15 / 修改时间：21:04:04" itemprop="dateCreated datePublished" datetime="2021-01-15T14:27:15+08:00">2021-01-15</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/flutter/" itemprop="url" rel="index"><span itemprop="name">flutter</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1、mac中，flutter doctor:sudo gem install cocoapods</p>
-<p><a href="https://imgchr.com/i/swqNT0" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2021/01/15/swqNT0.png" alt="swqNT0.png"></a></p>
-<p>2、执行以后出现：</p>
-<p>Gem files will remain installed in /Library/Ruby/Gems/2.3.0/gems/ffi-1.12.2 for inspection.</p>
-<p>3、先安装或者升级ruby（需要先安装rvm）, 才能升级pod成功</p>
-<p>4、安装rvm：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://get.rvm.io | bash -s stable</span><br></pre></td></tr></table></figure>
-
-<p>一般会出现网络错误：</p>
-<p>Failed to connect to raw.githubusercontent.com port 443: Connection refused</p>
-<p>【解决办法】：通过修改<code>hosts</code>解决此问题。</p>
-<p>在<a href="https://www.ipaddress.com/查询raw.githubusercontent.com的真实IP。" target="_blank" rel="noopener">https://www.ipaddress.com/查询raw.githubusercontent.com的真实IP。</a></p>
-<p>修改hosts</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>添加以下内容</p>
-<p>199.232.28.133   raw.githubusercontent.com</p>
-<p>4、安装ruby</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm install ruby-2.6</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://imgchr.com/i/swXmwR" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2021/01/15/swXmwR.png" alt="swXmwR.png"></a></p>
-<p><a href="https://imgchr.com/i/swjlEn" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2021/01/15/swjlEn.png" alt="swjlEn.png"></a></p>
-<p>测试安装成功：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ruby -v</span><br><span class="line"></span><br><span class="line">ruby 2.6.6p146 (2020-03-31 revision 67876) [x86_64-darwin19]</span><br><span class="line"></span><br><span class="line">rvm use ruby-2.6.6</span><br><span class="line"></span><br><span class="line">Using /Users/username/.rvm/gems/ruby-2.6.6</span><br></pre></td></tr></table></figure>
-
-<p>5、终于可以 执行pod了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install cocoapods</span><br></pre></td></tr></table></figure>
-
-<p>等待一段时间</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Done installing documentation for concurrent-ruby, i18n, thread_safe, tzinfo, activesupport, nap, fuzzy_match, httpclient, algoliasearch, ffi, ethon, typhoeus, netrc, public_suffix, addressable, cocoapods-core, claide, cocoapods-deintegrate, cocoapods-downloader, cocoapods-plugins, cocoapods-search, cocoapods-trunk, cocoapods-try, molinillo, atomos, CFPropertyList, colored2, nanaimo, xcodeproj, escape, fourflusher, gh_inspector, ruby-macho, cocoapods after 31 seconds</span><br><span class="line"></span><br><span class="line">34 gems installed</span><br></pre></td></tr></table></figure>
-
-<p>测试：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pod --version</span><br><span class="line"></span><br><span class="line">1.10.1</span><br></pre></td></tr></table></figure>
-
-<p>成功！</p>
-<p><a href="https://imgchr.com/i/swvBLQ" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2021/01/15/swvBLQ.png" alt="swvBLQ.png"></a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/10/%E5%9B%BE%E6%A0%87%E3%80%81%E5%90%AF%E5%8A%A8%E9%A1%B5%E3%80%81%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/aotang.jpg">
-      <meta itemprop="name" content="三鱼">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三鱼在熬汤">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/10/%E5%9B%BE%E6%A0%87%E3%80%81%E5%90%AF%E5%8A%A8%E9%A1%B5%E3%80%81%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/" class="post-title-link" itemprop="url">图标、启动页、打包发布</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-10 13:07:24" itemprop="dateCreated datePublished" datetime="2021-01-10T13:07:24+08:00">2021-01-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-15 21:02:59" itemprop="dateModified" datetime="2021-01-15T21:02:59+08:00">2021-01-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/flutter/" itemprop="url" rel="index"><span itemprop="name">flutter</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="一、APP图标的修改"><a href="#一、APP图标的修改" class="headerlink" title="一、APP图标的修改"></a>一、APP图标的修改</h4><p>1、图表的尺寸</p>
-<p>android 512x512</p>
-<p>ios 1024x1024</p>
-<p>2、在线logo生成工具：<a href="https://www.designevo.com/cn/logo-maker/" target="_blank" rel="noopener">https://www.designevo.com/cn/logo-maker/</a></p>
-<p>3、flutter_launcher_icons插件</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dev_dependencies:</span><br><span class="line">  # icons</span><br><span class="line">  flutter_launcher_icons: ^<span class="number">0.7</span><span class="number">.5</span></span><br><span class="line"></span><br><span class="line">flutter_icons:</span><br><span class="line">  android: <span class="string">"launcher_icon"</span></span><br><span class="line">  ios: <span class="keyword">true</span></span><br><span class="line">  image_path: <span class="string">"assets/icons/logo-1024.png"</span></span><br></pre></td></tr></table></figure>
-
-<p>4、生成图标</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter pub run flutter_launcher_icons:main</span><br></pre></td></tr></table></figure>
-
-<p>5、生成目录</p>
-<p>android/app/src/main/res</p>
-<p>ios/Runner/Assets.xcassets/AppIcon.appiconset</p>
-<h4 id="二、启动图片的修改"><a href="#二、启动图片的修改" class="headerlink" title="二、启动图片的修改"></a>二、启动图片的修改</h4><p>1、在线生成图片：<a href="https://www.canva.cn/" target="_blank" rel="noopener">https://www.canva.cn/</a></p>
-<p>2、在线生成格式工具：<a href="https://hotpot.ai/icon_resizer" target="_blank" rel="noopener">https://hotpot.ai/icon_resizer</a></p>
-<p>3、替换文件夹中的内容：</p>
-<p><img src="https://i.loli.net/2021/01/06/a69GTK1SJRozMVZ.png" alt="2021-01-06_182729.png"></p>
-<p>4、android/app/src/main/res/values/colors.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">"mainColor"</span>&gt;</span>#ffffff<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>5、android/app/src/main/res/drawable/launch_background.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Modify this file to customize your launch splash screen --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">layer-list</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@color/mainColor"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bitmap</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:gravity</span>=<span class="string">"center"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:src</span>=<span class="string">"@mipmap/launch_image"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">layer-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="三、Android-发布"><a href="#三、Android-发布" class="headerlink" title="三、Android 发布"></a>三、Android 发布</h4><p>1、生成证书：</p>
-<p>cd android/app/</p>
-<p>keytool -genkey -v -keystore ./key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key</p>
-<p>输出文件：android/app/key.jks</p>
-<p>2、android/key.properties</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">storePassword=123456</span><br><span class="line">keyPassword=123456</span><br><span class="line">keyAlias=key</span><br><span class="line">storeFile=./key.jks</span><br></pre></td></tr></table></figure>
-
-<p>3、修改版本号：pubspec.yaml</p>
-<p>version: 1.0.0+1</p>
-<p>4、修改程序名称：android/app/src/main/AndroidManifest.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">"io.flutter.app.FlutterApplication"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:label</span>=<span class="string">"应用名称"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:icon</span>=<span class="string">"@mipmap/launcher_icon"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>5、设置网络权限：android/app/src/main/AndroidManifest.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.INTERNET"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>6、编译打包</p>
-<p>flutter build apk –split-per-abi</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/27/2020-%E5%B0%98%E5%9F%83%E8%90%BD%E5%AE%9A%EF%BC%8C%E5%8D%B7%E5%9C%9F%E9%87%8D%E6%9D%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/aotang.jpg">
-      <meta itemprop="name" content="三鱼">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三鱼在熬汤">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/27/2020-%E5%B0%98%E5%9F%83%E8%90%BD%E5%AE%9A%EF%BC%8C%E5%8D%B7%E5%9C%9F%E9%87%8D%E6%9D%A5/" class="post-title-link" itemprop="url">2020-尘埃落定，卷土重来</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-12-27 14:31:26 / 修改时间：16:45:29" itemprop="dateCreated datePublished" datetime="2020-12-27T14:31:26+08:00">2020-12-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">日常学习</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今年开始，我想每年记录一下，不忘初心，继续努力。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/12/27/2020-%E5%B0%98%E5%9F%83%E8%90%BD%E5%AE%9A%EF%BC%8C%E5%8D%B7%E5%9C%9F%E9%87%8D%E6%9D%A5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/17/flutter%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95music%EF%BC%88%E4%B8%80%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/aotang.jpg">
-      <meta itemprop="name" content="三鱼">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三鱼在熬汤">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/17/flutter%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95music%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-title-link" itemprop="url">flutter实践记录music（一）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-17 19:58:15" itemprop="dateCreated datePublished" datetime="2020-12-17T19:58:15+08:00">2020-12-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-10 13:07:05" itemprop="dateModified" datetime="2021-01-10T13:07:05+08:00">2021-01-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/flutter/" itemprop="url" rel="index"><span itemprop="name">flutter</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1、</p>
-<table>
-<thead>
-<tr>
-<th>插件</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>routes.dart</td>
-<td>fluro 的路由管理</td>
-</tr>
-<tr>
-<td>net_utils.dart</td>
-<td>网络请求管理</td>
-</tr>
-<tr>
-<td>common_text_style.dart</td>
-<td>一些通用的 text 样式</td>
-</tr>
-<tr>
-<td>h_empty_view.dart</td>
-<td>横向空组件（用于占位）</td>
-</tr>
-<tr>
-<td>v_empty_view.dart</td>
-<td>纵向空组件（用于占位）</td>
-</tr>
-<tr>
-<td>loading.dart</td>
-<td>加载组件</td>
-</tr>
-<tr>
-<td>widget_future_builder.dart</td>
-<td>网络请求组件</td>
-</tr>
-<tr>
-<td>widget_net_error.dart</td>
-<td>网络请求失败组件</td>
-</tr>
-</tbody></table>
-<p>2、showGeneralDialog的使用</p>
-<p><em><a href="https://www.kikt.top/posts/flutter/dialog/dialog-2/" target="_blank" rel="noopener">https://www.kikt.top/posts/flutter/dialog/dialog-2/</a></em></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/12/17/flutter%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95music%EF%BC%88%E4%B8%80%EF%BC%89/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1227,7 +1168,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1276,12 +1217,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">35k</span>
+    <span title="站点总字数">48k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">32 分钟</span>
+    <span title="站点阅读时长">44 分钟</span>
 </div>
 
         
